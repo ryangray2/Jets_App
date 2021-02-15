@@ -110,7 +110,7 @@ h5 {
 #summaryHead {
   color: #cfecfe;
   font-family: "Big Shoulders Inline Display";
-  font-size: 12vw;
+  font-size: 8vh;
 }
 
 #dealHead {
@@ -201,7 +201,7 @@ h5 {
 }
 
 #dropdownMenuButton {
-  font-family: "Anton" !important;
+    font-family: "Coda Caption" !important;
 }
 
 .dropdown-item {
@@ -226,14 +226,54 @@ color: black;
   height: 100%;
   width: 100%;
     background-color: #125740;
+    background-image: url("jetXlogofade.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .sumAddDrop {
-  font-size: 5vh;
+  font-size: 4vh;
       font-family: 'Anton';
       font-style: italic;
+      margin-bottom: 0px;
 }
 
+.sumP {
+  font-size: 1.5vh;
+}
+
+#twitter {
+  color: #00ACEE;
+  font-size: 5vh;
+}
+
+#facebook {
+  color: #3B5998;
+  font-size: 5vh;
+}
+
+#share {
+  background-color: #cfebfd;
+    border-radius: 49px;
+    border: 3px solid #29b68c;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+#screenshot {
+  font-size: 3vh;
+      font-family: "Coda Caption";
+      margin-top: 10px;
+      color: #145841;
+}
+
+#sCap {
+  font-size: 2vh;
+}
+
+#sRoster {
+  display: none;
+}
 
 
 .faImg {
@@ -311,6 +351,7 @@ color: black;
 }
 
 #pickHistoryCont {
+  display: none;
   height: 70vh;
   overflow: scroll;
   background-color: #3c3935;
