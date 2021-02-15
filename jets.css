@@ -1,5 +1,5 @@
 body {
-  background: #046a38;
+  background: #125740;
   color: #cfecfe;
   -webkit-touch-callout: none; /* iOS Safari */
    -webkit-user-select: none; /* Safari */
@@ -10,6 +10,8 @@ body {
                                  supported by Chrome, Edge, Opera and Firefox */
 
 }
+
+/* // #046a38 */
 
 .butt {
   font-family: "Coda Caption" !important;
@@ -55,7 +57,7 @@ h5 {
 }
 
 #green {
-  background-color: #046a38;
+  background-color: #125740;
   z-index: 301;
   height: 100%;
   width: 100%;
@@ -73,6 +75,11 @@ h5 {
   border-bottom: 1px solid black;
 }
 
+#pickHistoryHeader {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
 #trans4 {
   background-image: url("curtisBG.jpg");
   z-index: 302;
@@ -82,6 +89,7 @@ h5 {
   background-color: #27251f;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  font-size: 4vh;
 }
 
 #capBar {
@@ -114,7 +122,7 @@ h5 {
 #faHead {
   color: #cfecfe;
   font-family: "Big Shoulders Inline Display";
-  font-size: 12vw;
+  font-size: 8vh;
 }
 
 .watsonAssetRow {
@@ -153,7 +161,7 @@ h5 {
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: #046a38;
+  background-color: #125740;
 }
 
 #faCont {
@@ -162,7 +170,7 @@ h5 {
   position: absolute;
   height: 100%;
   width: 100%;
-    background-color: #046a38;
+    background-color: #125740;
     background-position: right;
     background-size: cover;
 }
@@ -192,6 +200,14 @@ h5 {
       border-bottom-right-radius: 20px;
 }
 
+#dropdownMenuButton {
+  font-family: "Anton" !important;
+}
+
+.dropdown-item {
+  font-family: "Anton" !important;
+}
+
 #faNavCont {
   /* background-color: lightblue; */
   height: 70vh;
@@ -209,7 +225,7 @@ color: black;
   position: absolute;
   height: 100%;
   width: 100%;
-    background-color: #046a38;
+    background-color: #125740;
 }
 
 .sumAddDrop {
@@ -228,7 +244,7 @@ color: black;
 .faName {
   font-family: "Anton";
   font-size: 50px;
-  color: #046a38 !important;
+  color: #125740 !important;
   font-style:italic;
   margin-bottom: 1px;
 }
@@ -270,6 +286,10 @@ color: black;
   background-color: #27251f;
 }
 
+.draftName {
+
+}
+
 .nflDraftLogo1 {
   width: 30vh;
 }
@@ -290,6 +310,16 @@ color: black;
   background-color: #3c3935;
 }
 
+#pickHistoryCont {
+  height: 70vh;
+  overflow: scroll;
+  background-color: #3c3935;
+}
+
+.phLogo {
+  width: 100%;
+}
+
 #showPick {
     font-family: "Anton";
     font-size: 4vh;
@@ -302,7 +332,7 @@ color: black;
   position: absolute;
   height: 100%;
   width: 100%;
-    background-color: #046a38;
+    background-color: #125740;
 }
 #watsonTradeAssets {
   display: none;
@@ -310,7 +340,7 @@ color: black;
   position: absolute;
   height: 100%;
   width: 100%;
-    background-color: #046a38;
+    background-color: #125740;
     background-image: url("watsonTradeBG copy.jpg");
     background-position: right;
     background-size: cover;
@@ -342,7 +372,7 @@ border-radius: 20px;
   position: absolute;
   height: 100%;
   width: 100%;
-    background-color: #046a38;
+    background-color: #125740;
     background-position: right;
     background-size: cover;
 }
@@ -352,7 +382,7 @@ border-radius: 20px;
   position: absolute;
   height: 100%;
   width: 100%;
-    background-color: #046a38;
+    background-color: #125740;
     background-position: right;
     background-size: cover;
 }
@@ -362,7 +392,7 @@ border-radius: 20px;
   position: absolute;
   height: 100%;
   width: 100%;
-    background-color: #046a38;
+    background-color: #125740;
     background-position: right;
     background-size: cover;
 }
