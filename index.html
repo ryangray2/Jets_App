@@ -290,53 +290,71 @@
       </div> -->
     </div>
     <hr>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Sort
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" onclick="generateDraftPool('fifty')">Top 50</a>
-        <a class="dropdown-item" onclick="generateDraftPool('QB')">QB</a>
-        <a class="dropdown-item" onclick="generateDraftPool('RB')">RB</a>
-        <a class="dropdown-item" onclick="generateDraftPool('WR')">WR</a>
-        <a class="dropdown-item" onclick="generateDraftPool('TE')">TE</a>
-        <a class="dropdown-item" onclick="generateDraftPool('OL')">OL</a>
-        <a class="dropdown-item" onclick="generateDraftPool('DL')">DL</a>
-        <a class="dropdown-item" onclick="generateDraftPool('LB')">LB</a>
-        <a class="dropdown-item" onclick="generateDraftPool('CB')">CB</a>
-        <a class="dropdown-item" onclick="generateDraftPool('S')">S</a>
+    <div class="row">
+      <div class="col-2">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            SORT
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" onclick="generateDraftPool('fifty')">Top 50</a>
+            <a class="dropdown-item" onclick="generateDraftPool('QB')">QB</a>
+            <a class="dropdown-item" onclick="generateDraftPool('RB')">RB</a>
+            <a class="dropdown-item" onclick="generateDraftPool('WR')">WR</a>
+            <a class="dropdown-item" onclick="generateDraftPool('TE')">TE</a>
+            <a class="dropdown-item" onclick="generateDraftPool('OL')">OL</a>
+            <a class="dropdown-item" onclick="generateDraftPool('DL')">DL</a>
+            <a class="dropdown-item" onclick="generateDraftPool('LB')">LB</a>
+            <a class="dropdown-item" onclick="generateDraftPool('CB')">CB</a>
+            <a class="dropdown-item" onclick="generateDraftPool('S')">S</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <button class="bttn-minimal bttn-sm bttn-success butt" onclick="playersPressed()">PLAYERS</button>
+      </div>
+      <div class="col-8">
+        <button class="bttn-minimal bttn-sm bttn-success butt" onclick="pickHistoryPressed()">PICK HISTORY</button>
       </div>
     </div>
     <div class="container">
       <div class="row" id="draftPoolHeader">
         <div class="col-2 col-md-1 myauto">
-          <p class="align-middle myauto">Rank</p>
+          <p class="align-middle myauto">RANK</p>
         </div>
         <div class="col-2 col-md-1 myauto">
-          <p class="align-middle myauto">Pos</p>
+          <p class="align-middle myauto">POS</p>
         </div>
         <div class="col-6 col-md-4 myauto">
-          <p class="align-middle myauto">Name</p>
+          <p class="align-middle myauto">NAME</p>
         </div>
         <div class="d-none d-md-block col-md-4 myauto">
-          <p class="align-middle myauto">School</p>
+          <p class="align-middle myauto">SCHOOL</p>
         </div>
       </div>
     </div>
     <div class="container" id="draftPoolCont">
 
     </div>
-    <!-- <div class="row">
-      <div class="col-2">
-        <p class="draftPos">QB</p>
+    <div class="container">
+      <div class="row" id="pickHistoryHeader">
+        <div class="col-2 col-md-1 myauto">
+          <p class="align-middle myauto">TEAM</p>
+        </div>
+        <div class="col-2 col-md-1 myauto">
+          <p class="align-middle myauto">PICK</p>
+        </div>
+        <div class="col-6 col-md-4 myauto">
+          <p class="align-middle myauto">NAME</p>
+        </div>
+        <div class="d-none d-md-block col-md-4 myauto">
+          <p class="align-middle myauto">SCHOOL</p>
+        </div>
       </div>
-      <div class="col-7">
-        <p class="draftName">Sam Darnold</p>
-      </div>
-      <div class="col-3">
-        <button class="draftPlayerButton">Draft</button>
-      </div>
-    </div> -->
+    </div>
+    <div class="container" id="pickHistoryCont">
+
+    </div>
   </div>
 </div>
 <div  id="summary" class="slide-in-left2">
