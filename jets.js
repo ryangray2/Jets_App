@@ -19,7 +19,10 @@ var draftSummary = [];
 var leftOffShow = 0;
 var showAmount = 0;
 
+var sumCap = "";
+
 function load() {
+  console.log(draftOrder);
   divideRoster();
   console.log(getCapRoom());
   updateCapBar();
@@ -87,13 +90,13 @@ function generateDarnoldOffers(num) {
   var buttonRow = document.createElement("div");
   buttonRow.classList.add("row", "text-center");
   var r1 = document.createElement("div");
-  r1.classList.add("col-3");
+  r1.classList.add("col-0", "col-md-3");
   var rbutcol = document.createElement("div");
-  rbutcol.classList.add("col-3");
+  rbutcol.classList.add("col-6","col-md-3");
   var lbutcol = document.createElement("div");
-  lbutcol.classList.add("col-3");
+  lbutcol.classList.add("col-6", "col-md-3");
   var r2 = document.createElement("div");
-  r2.classList.add("col-3");
+  r2.classList.add("col-0", "col-md-3");
 
   if (num != darnoldTradeArr.length - 1) {
 
@@ -649,156 +652,179 @@ function generateRoster() {
     var aNum;
     switch(a.pos) {
       case "QB":
-        aNum = 10;
+        aNum = 26;
         break;
       case "RB":
-        aNum = 9;
+        aNum = 25;
         break;
       case "FB":
-        aNum = 9;
+        aNum = 24;
         break;
       case "WR":
-        aNum = 8;
+        aNum = 23;
         break;
       case "TE":
-        aNum = 7;
+        aNum = 22;
         break;
       case "OL":
-        aNum = 6;
+        aNum = 21;
         break;
       case "T":
-        aNum = 6;
+        aNum = 20;
         break;
       case "OG":
-        aNum = 6;
+        aNum = 19;
         break;
       case "OT":
-        aNum = 6;
+        aNum = 18;
         break;
       case "G":
-        aNum = 6;
+        aNum = 17;
         break;
       case "C":
-        aNum = 6;
+        aNum = 16;
         break;
       case "LT":
-        aNum = 6;
+        aNum = 15;
         break;
       case "DE":
-        aNum = 5;
+        aNum = 14;
         break;
       case "DL":
-        aNum = 5;
+        aNum = 13;
         break;
       case "IDL":
-        aNum = 5;
+        aNum = 12;
         break;
       case "DT":
-        aNum = 5;
+        aNum = 11;
         break;
       case "EDGE":
-        aNum = 5;
+        aNum = 10;
         break;
       case "ILB":
-        aNum = 4;
+        aNum = 9;
         break;
       case "LB":
-        aNum = 4;
+        aNum = 8;
         break;
       case "ROLB":
-        aNum = 4;
+        aNum = 7;
         break;
       case "MLB":
-        aNum = 4;
+        aNum = 6;
         break;
       case "CB":
-        aNum = 3;
+        aNum = 5;
         break;
       case "DB":
-        aNum = 3;
+        aNum = 4;
         break;
       case "FS":
-        aNum = 2;
-        break;
-      case "S":
         aNum = 3;
         break;
-      default:
+      case "S":
         aNum = 2;
+        break;
+      default:
+        aNum = 1;
     }
     var bNum;
     switch(b.pos) {
       case "QB":
-        bNum = 10;
+        bNum = 26;
         break;
       case "RB":
-        bNum = 9;
+        bNum = 25;
+        break;
+      case "FB":
+        bNum = 24;
         break;
       case "WR":
-        bNum = 8;
+        bNum = 23;
         break;
       case "TE":
-        bNum = 7;
+        bNum = 22;
         break;
       case "OL":
-        bNum = 6;
+        bNum = 21;
         break;
       case "T":
-        bNum = 6;
+        bNum = 20;
         break;
       case "OG":
-        bNum = 6;
+        bNum = 19;
         break;
       case "OT":
-        bNum = 6;
-        break;
-      case "C":
-        bNum = 6;
+        bNum = 18;
         break;
       case "G":
-        bNum = 6;
+        bNum = 17;
+        break;
+      case "C":
+        bNum = 16;
         break;
       case "LT":
-        bNum = 6;
+        bNum = 15;
         break;
       case "DE":
-        bNum = 5;
+        bNum = 14;
         break;
       case "DL":
-        bNum = 5;
+        bNum = 13;
+        break;
+      case "IDL":
+        bNum = 12;
         break;
       case "DT":
-        bNum = 5;
+        bNum = 11;
+        break;
+      case "EDGE":
+        bNum = 10;
         break;
       case "ILB":
-        bNum = 4;
+        bNum = 9;
         break;
       case "LB":
-        bNum = 4;
+        bNum = 8;
         break;
       case "ROLB":
-        bNum = 4;
+        bNum = 7;
         break;
       case "MLB":
-        bNum = 4;
+        bNum = 6;
         break;
       case "CB":
-        bNum = 3;
+        bNum = 5;
         break;
       case "DB":
-        bNum = 3;
+        bNum = 4;
         break;
       case "FS":
-        bNum = 2;
-        break;
-      case "S":
         bNum = 3;
         break;
-      default:
+      case "S":
         bNum = 2;
+        break;
+      default:
+        bNum = 1;
     }
     return bNum - aNum;
   });
+
+  var noterow = document.createElement("div");
+  noterow.classList.add("row", "text-center");
+
+  var noteCol = document.createElement("div");
+  noteCol.classList.add("col-12");
+
+  var noteP = document.createElement("p");
+  noteP.innerHTML = "(Max of 6 players can be cut.)";
+
+  noteCol.appendChild(noteP);
+  noterow.appendChild(noteCol);
+  root.appendChild(noterow);
+
 
   var row = document.createElement("div");
   row.classList.add("row");
@@ -1210,7 +1236,7 @@ function draftPressed() {
 // }
 
 function draftsOver() {
-  document.body.setAttribute("style", "background-color: #046a38");
+  document.body.setAttribute("style", "background-color: #125740");
   document.getElementById("draftCont").style.display = "none";
   document.getElementById("summary").style.display = "block";
   generateSummary();
@@ -1224,7 +1250,247 @@ function draftsOver() {
   }
 }
 
+function sMoves() {
+  document.getElementById("sMoves").style.display = "flex";
+  document.getElementById("sRoster").style.display = "none";
+}
+
+function sRoster() {
+  document.getElementById("sMoves").style.display = "none";
+  document.getElementById("sRoster").style.display = "block";
+
+}
+
+function generateSRoster() {
+  var root = document.getElementById("sRoster");
+  while (root.firstChild) {
+    root.removeChild(root.firstChild);
+  }
+  activeRoster.sort(function(a,b) {
+    var aNum;
+    switch(a.pos) {
+      case "QB":
+        aNum = 26;
+        break;
+      case "RB":
+        aNum = 25;
+        break;
+      case "FB":
+        aNum = 24;
+        break;
+      case "WR":
+        aNum = 23;
+        break;
+      case "TE":
+        aNum = 22;
+        break;
+      case "OL":
+        aNum = 21;
+        break;
+      case "T":
+        aNum = 20;
+        break;
+      case "OG":
+        aNum = 19;
+        break;
+      case "OT":
+        aNum = 18;
+        break;
+      case "G":
+        aNum = 17;
+        break;
+      case "C":
+        aNum = 16;
+        break;
+      case "LT":
+        aNum = 15;
+        break;
+      case "DE":
+        aNum = 14;
+        break;
+      case "DL":
+        aNum = 13;
+        break;
+      case "IDL":
+        aNum = 12;
+        break;
+      case "DT":
+        aNum = 11;
+        break;
+      case "EDGE":
+        aNum = 10;
+        break;
+      case "ILB":
+        aNum = 9;
+        break;
+      case "LB":
+        aNum = 8;
+        break;
+      case "ROLB":
+        aNum = 7;
+        break;
+      case "MLB":
+        aNum = 6;
+        break;
+      case "CB":
+        aNum = 5;
+        break;
+      case "DB":
+        aNum = 4;
+        break;
+      case "FS":
+        aNum = 3;
+        break;
+      case "S":
+        aNum = 2;
+        break;
+      default:
+        aNum = 1;
+    }
+    var bNum;
+    switch(b.pos) {
+      case "QB":
+        bNum = 26;
+        break;
+      case "RB":
+        bNum = 25;
+        break;
+      case "FB":
+        bNum = 24;
+        break;
+      case "WR":
+        bNum = 23;
+        break;
+      case "TE":
+        bNum = 22;
+        break;
+      case "OL":
+        bNum = 21;
+        break;
+      case "T":
+        bNum = 20;
+        break;
+      case "OG":
+        bNum = 19;
+        break;
+      case "OT":
+        bNum = 18;
+        break;
+      case "G":
+        bNum = 17;
+        break;
+      case "C":
+        bNum = 16;
+        break;
+      case "LT":
+        bNum = 15;
+        break;
+      case "DE":
+        bNum = 14;
+        break;
+      case "DL":
+        bNum = 13;
+        break;
+      case "IDL":
+        bNum = 12;
+        break;
+      case "DT":
+        bNum = 11;
+        break;
+      case "EDGE":
+        bNum = 10;
+        break;
+      case "ILB":
+        bNum = 9;
+        break;
+      case "LB":
+        bNum = 8;
+        break;
+      case "ROLB":
+        bNum = 7;
+        break;
+      case "MLB":
+        bNum = 6;
+        break;
+      case "CB":
+        bNum = 5;
+        break;
+      case "DB":
+        bNum = 4;
+        break;
+      case "FS":
+        bNum = 3;
+        break;
+      case "S":
+        bNum = 2;
+        break;
+      default:
+        bNum = 1;
+    }
+    return bNum - aNum;
+  });
+
+
+
+  var row = document.createElement("div");
+  row.classList.add("row");
+
+  var posCol = document.createElement("div");
+  posCol.classList.add("col-2");
+
+  var posP = document.createElement("p");
+  posP.classList.add("rosterHead");
+  posP.innerHTML = "<b>POS</b>";
+  posCol.appendChild(posP);
+  row.appendChild(posCol);
+
+  var nameCol = document.createElement("div");
+  nameCol.classList.add("col-4", "col-md-4");
+
+  var nameP = document.createElement("p");
+  nameP.classList.add("rosterHead");
+  nameP.innerHTML = "<b>NAME</b>";
+  nameCol.appendChild(nameP);
+  row.appendChild(nameCol);
+
+
+  row.style.borderBottom = "1px solid #125740";
+
+  root.appendChild(row);
+
+  for (let i = 0; i < activeRoster.length; i++) {
+    var row2 = document.createElement("div");
+    row2.classList.add("row");
+
+    var posCol2 = document.createElement("div");
+    posCol2.classList.add("col-2");
+
+    var posP2 = document.createElement("p");
+    posP2.classList.add("rosterPos");
+    posP2.style.marginBottom = "0px";
+    posP2.innerHTML = activeRoster[i].pos;
+    posCol2.appendChild(posP2);
+    row2.appendChild(posCol2);
+
+    var nameCol2 = document.createElement("div");
+    nameCol2.classList.add("col-8", "col-md-8");
+
+    var nameP2 = document.createElement("p");
+    nameP2.classList.add("rosterName");
+    nameP2.style.marginBottom = "0px";
+    nameP2.innerHTML = activeRoster[i].name;
+    nameCol2.appendChild(nameP2);
+    row2.appendChild(nameCol2);
+
+
+
+    root.appendChild(row2);
+  }
+}
+
 function generateSummary() {
+  document.getElementById("sCap").innerHTML = "CAP SPACE: $" + sumCap;
+  generateSRoster();
   var root = document.getElementById("tradedFor");
   while (root.firstChild) {
     root.removeChild(root.firstChild);
@@ -1236,12 +1502,15 @@ function generateSummary() {
       var col = document.createElement("div");
       col.classList.add("col-12");
       var p = document.createElement("div");
+      p.classList.add("sumP");
       p.innerHTML = tradedFor[i];
 
       col.appendChild(p);
       row.appendChild(col);
       root.appendChild(row);
     }
+  } else {
+    document.getElementById("tfHead").style.display = "none";
   }
   var root2 = document.getElementById("tradedAway");
   while (root2.firstChild) {
@@ -1254,12 +1523,15 @@ function generateSummary() {
       var col = document.createElement("div");
       col.classList.add("col-12");
       var p = document.createElement("div");
+      p.classList.add("sumP");
       p.innerHTML = tradedAway[i];
 
       col.appendChild(p);
       row.appendChild(col);
       root2.appendChild(row);
     }
+  } else {
+    document.getElementById("taHead").style.display = "none";
   }
   var root3 = document.getElementById("signed");
   while (root3.firstChild) {
@@ -1272,29 +1544,35 @@ function generateSummary() {
       var col = document.createElement("div");
       col.classList.add("col-12");
       var p = document.createElement("div");
-      p.innerHTML = signedArr[i].name;
+      p.classList.add("sumP");
+      p.innerHTML = "<b>" + signedArr[i].name + "</b><br /> (" + signedArr[i].cYears + " yr./$" + signedArr[i].cTotal + " mil)";
 
       col.appendChild(p);
       row.appendChild(col);
       root3.appendChild(row);
     }
+  } else{
+    document.getElementById("sHead").style.display = "none";
   }
   var root4 = document.getElementById("drafted");
   while (root4.firstChild) {
     root4.removeChild(root4.firstChild);
   }
   if (jetsDrafted.length != 0) {
-    for (var i = 0; i < jetsDrafted.length; i++) {
-      var row = document.createElement("div");
-      row.classList.add("row");
-      var col = document.createElement("div");
-      col.classList.add("col-12");
-      var p = document.createElement("div");
-      p.innerHTML = jetsDrafted[i].name;
+    for (var i = 0; i < draftSummary.length; i++) {
+      if (draftSummary[i][0].name === "Jets") {
+        var row = document.createElement("div");
+        row.classList.add("row");
+        var col = document.createElement("div");
+        col.classList.add("col-12");
+        var p = document.createElement("div");
+        p.classList.add("sumP");
+        p.innerHTML = "<b>#" + (i + 1) + "</b><br />" + draftSummary[i][1].pos + " " + draftSummary[i][1].name;
 
-      col.appendChild(p);
-      row.appendChild(col);
-      root4.appendChild(row);
+        col.appendChild(p);
+        row.appendChild(col);
+        root4.appendChild(row);
+      }
     }
   }
 }
@@ -1393,6 +1671,9 @@ function getPick(team) {
   if (amount > 0) {
     for (var i = 0; i < amount; i++) {
       var positionNeed = team.needs[i];
+      if (positionNeed == "RB" && draftSummary.length < 20) {
+        continue;
+      }
       for (var j = 0; j < draftPlayers.length; j++) {
         if (draftPlayers[j].pos == positionNeed) {     ////// you can make a decreasing var for random
           possiblePicks.push(draftPlayers[j]);
@@ -1562,6 +1843,7 @@ function getCapRoom() {
 }
 
 function updateCapBar() {
+  sumCap = addCommas(getCapRoom());
   document.getElementById("capSpaceText").innerHTML = "Cap Space: $" + addCommas(getCapRoom());
 }
 
