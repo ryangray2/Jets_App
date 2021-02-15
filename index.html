@@ -274,10 +274,10 @@
 <div  id="draftCont" class="slide-in-left2">
   <div class="container">
     <div class="row text-center">
-      <div class="col-12 col-md-4">
+      <div class="col-6 col-md-4">
         <img class="nflDraftLogo" src="nflDraftLogo.png"></img>
       </div>
-      <div class="col-12 col-md-8">
+      <div class="col-6 col-md-8">
         <p style="margin-top: 15px">ON THE CLOCK: </p>
             <img class="draftLogo" src="https://static.www.nfl.com/image/private/f_auto/league/ekijosiae96gektbo4iw">
             <p style="margin-top: 15px" id="roundpicktext"></p>
@@ -291,7 +291,7 @@
     </div>
     <hr>
     <div class="row">
-      <div class="col-2">
+      <div class="col-3 col-md-2">
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             SORT
@@ -310,10 +310,10 @@
           </div>
         </div>
       </div>
-      <div class="col-2">
+      <div class="col-3 col-md-2">
         <button class="bttn-minimal bttn-sm bttn-success butt" onclick="playersPressed()">PLAYERS</button>
       </div>
-      <div class="col-8">
+      <div class="col-6 col-md-8">
         <button class="bttn-minimal bttn-sm bttn-success butt" onclick="pickHistoryPressed()">PICK HISTORY</button>
       </div>
     </div>
@@ -364,47 +364,69 @@
         <h1 id="summaryHead" class="slide-in-left2">SUMMARY</h1>
       </div>
     </div>
+    <div class="row">
+      <div class="col-6 col-md-4 col-lg-3">
+        <button class="bttn-minimal bttn-sm bttn-success butt" onclick="sMoves()">MOVES</button>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <button class="bttn-minimal bttn-sm bttn-success butt" onclick="sRoster()">ROSTER</button>
+      </div>
+    </div>
     <hr>
-    <div class="row">
-      <div class="col-12">
-        <p class="sumAddDrop">Traded For</p>
+      <div id="sMoves" class="row">
+        <div class="col-12">
+          <p id="sCap">CAP SPACE: </p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="row">
+            <div class="col-12">
+              <p class="sumAddDrop" id="dHead">Drafted</p>
+            </div>
+          </div>
+          <div id="drafted" >
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="row">
+            <div class="col-12">
+              <p class="sumAddDrop" id="sHead">Signed</p>
+            </div>
+          </div>
+          <div id="signed" >
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="row">
+            <div class="col-12">
+              <p class="sumAddDrop" id="tfHead">Traded For</p>
+            </div>
+          </div>
+          <div id="tradedFor" >
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="row">
+            <div class="col-12">
+              <p class="sumAddDrop" id="taHead">Traded Away</p>
+            </div>
+          </div>
+          <div id="tradedAway" >
+          </div>
+        </div>
+      <div class="row text-center" id="share">
+        <div class="col-12">
+          <p id="screenshot">Screenshot and Share</p>
+        </div>
+        <div class="col-6 col-md-6">
+          <a id="twitter" href="https://twitter.com/jetsxfactor" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+        </div>
+        <div class="col-6 col-md-6">
+          <a id="facebook" href="https://www.facebook.com/jetsxfactor/" target="_blank"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>
+        </div>
       </div>
-    </div>
-    <div id="tradedFor" >
-    </div>
-    <!-- <div class="row">
-      <div class="col-12">
-        <p class="">Example</p>
-        <p class="">Example</p>
       </div>
-    </div> -->
-    <div class="row">
-      <div class="col-12">
-        <p class="sumAddDrop">Traded Away</p>
+      <div class="container" id="sRoster">
       </div>
-    </div>
-    <div id="tradedAway" >
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <p class="sumAddDrop">Signed</p>
-      </div>
-    </div>
-    <div id="signed" >
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <p class="sumAddDrop">Drafted</p>
-      </div>
-    </div>
-    <div id="drafted" >
-    </div>
-    <!-- <div class="row">
-      <div class="col-12">
-        <p class="">Example</p>
-        <p class="">Example</p>
-      </div>
-    </div> -->
   </div>
 </div>
 <script src="jets.js"></script>
