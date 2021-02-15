@@ -121,7 +121,7 @@ var tb = {
 var was = {
   city: "Washington",
   name: "Football Team",
-  logo: "https://lh3.googleusercontent.com/proxy/isAEEYRUG2cgjKmNcy0ASwE-BNZX8Glo0JzhRrwdpCz2FXj0UKyH1ssTMAwV7CEOKnBG9XP_pB3ytxoJwj51GltXWYvnaCclV9n73MqtYuTn5AvsOw7Gkl7uEvqRb75DwXwsOJ4",
+  logo: "unnamed.png",
   draftResults: [],
   needs: ["QB", "OT", "WR", "CB", "S"]
 };
@@ -261,6 +261,6 @@ var draftOrder = [
   [jax, nyj, hou, atl, cin, phi, den, det, car, was, dal, nyg, lac, min, az, lv, mia, was, chi, ind, ten, nyj, pit, lar, cle, min, cle, tb, buf, gb, kc],
   [jax, nyj, atl, hou, cle, cin, det, car, den, dal, nyg, sf, lac, min, ne, lv, hou, mia, was, min, ten, ind, pit, sea, jax, bal, cle, no, tb, min, gb, kc],
   [jax, nyj, hou, atl, cin, phi, car, den, det, nyj, sf, phi, min, ne, lac, az, buf, lv, was, chi, ind, ten, sea, bal, cle, jax, min, sf, tb, buf, gb, kc],
-  [ten, nyj, atl, hou, phi, cin, den, dal, car, sf, ne, nyg, ne, lac, min, nyg, hou, lv, chi, lac, ind, mia, sea, lar, bal, cle, hou, pit, buf, gb, ten],
-  [jax, sf, hou, chi, cin, phi, cin, buf, den, dal, den, sf, lac, min, ne, az, was, pit, was, lv, ind, jax, nyj, tb, lar, den, pit, tb, cle, gb, kc]
+  [ten, ne, atl, hou, phi, cin, den, dal, car, sf, ne, nyg, nyj, lac, min, nyg, hou, lv, chi, lac, ind, mia, sea, lar, bal, cle, hou, pit, buf, gb, ten],
+  [jax, sf, hou, chi, cin, phi, cin, buf, den, dal, den, sf, lac, min, ne, az, was, pit, was, lv, ind, jax, sea, tb, lar, den, pit, tb, cle, gb, kc]
 ];
