@@ -609,15 +609,17 @@ function popUp(guy, yes) {
 
 function signBroadFA(guy) {
   // alert(guy.name);
-  guy.salary = (guy.cTotal * 1000000) / guy.cYears;
+  guy.salary = Math.floor((guy.cTotal * 1000000) / guy.cYears);
+  console.log(guy.salary);
+
   var sal = guy.salary;
   var cap =  getCapRoom();
   if (sal < cap) {
-    console.log('test');
+
     var num = (Math.floor(Math.random() * 100));
     if (guy.interest >= num) {
       popUp(guy, true);
-      console.log(guy.salary);
+
       activeRoster.push(guy);
       signedArr.push(guy);
       offeredArr.push(guy);
@@ -627,10 +629,10 @@ function signBroadFA(guy) {
       updateCapBar() // fix
       generateBroadFA();
       generateRoster();
-      console.log(activeRoster);
+
     } else {
       popUp(guy, false);
-      console.log("Rejected");
+
       offeredArr.push(guy);
       generateBroadFA();
     }
@@ -650,6 +652,9 @@ function generateRoster() {
         aNum = 10;
         break;
       case "RB":
+        aNum = 9;
+        break;
+      case "FB":
         aNum = 9;
         break;
       case "WR":
@@ -685,7 +690,13 @@ function generateRoster() {
       case "DL":
         aNum = 5;
         break;
+      case "IDL":
+        aNum = 5;
+        break;
       case "DT":
+        aNum = 5;
+        break;
+      case "EDGE":
         aNum = 5;
         break;
       case "ILB":
@@ -789,28 +800,88 @@ function generateRoster() {
     return bNum - aNum;
   });
 
+  var row = document.createElement("div");
+  row.classList.add("row");
+
+  var posCol = document.createElement("div");
+  posCol.classList.add("col-2");
+
+  var posP = document.createElement("p");
+  posP.classList.add("rosterHead");
+  posP.innerHTML = "POS";
+  posCol.appendChild(posP);
+  row.appendChild(posCol);
+
+  var nameCol = document.createElement("div");
+  nameCol.classList.add("col-4", "col-md-4");
+
+  var nameP = document.createElement("p");
+  nameP.classList.add("rosterHead");
+  nameP.innerHTML = "NAME";
+  nameCol.appendChild(nameP);
+  row.appendChild(nameCol);
+
+  var saveCol = document.createElement("div");
+  saveCol.classList.add("col-3", "col-md-3");
+
+  var saveP = document.createElement("p");
+  saveP.classList.add("rosterHead");
+  saveP.innerHTML = "POTENTIAL SAVINGS";
+  saveCol.appendChild(saveP);
+  row.appendChild(saveCol);
+
+  var chCol = document.createElement("div");
+  chCol.classList.add("col-3", "col-md-3");
+
+  var chP = document.createElement("p");
+  chP.classList.add("rosterHead");
+  chP.innerHTML = "CUT";
+  chCol.appendChild(chP);
+  row.appendChild(chCol);
+
+  row.style.borderBottom = "1px solid #125740";
+
+  root.appendChild(row);
+
   for (let i = 0; i < activeRoster.length; i++) {
-    var row = document.createElement("div");
-    row.classList.add("row");
+    var row2 = document.createElement("div");
+    row2.classList.add("row");
 
-    var posCol = document.createElement("div");
-    posCol.classList.add("col-2");
+    var posCol2 = document.createElement("div");
+    posCol2.classList.add("col-2");
 
-    var posP = document.createElement("p");
-    posP.classList.add("rosterPos");
-    posP.innerHTML = activeRoster[i].pos;
-    posCol.appendChild(posP);
-    row.appendChild(posCol);
+    var posP2 = document.createElement("p");
+    posP2.classList.add("rosterPos");
+    posP2.innerHTML = activeRoster[i].pos;
+    posCol2.appendChild(posP2);
+    row2.appendChild(posCol2);
 
-    var nameCol = document.createElement("div");
-    nameCol.classList.add("col-7");
+    var nameCol2 = document.createElement("div");
+    nameCol2.classList.add("col-4", "col-md-4");
 
-    var nameP = document.createElement("p");
-    nameP.classList.add("rosterName");
-    nameP.innerHTML = activeRoster[i].name;
-    nameCol.appendChild(nameP);
-    row.appendChild(nameCol);
-    if (!signedArr.includes(activeRoster[i])) {
+    var nameP2 = document.createElement("p");
+    nameP2.classList.add("rosterName");
+    nameP2.innerHTML = activeRoster[i].name;
+    nameCol2.appendChild(nameP2);
+    row2.appendChild(nameCol2);
+
+
+    if (!signedArr.includes(activeRoster[i]) && cutArr.length < 6) {
+
+      var penCol = document.createElement("div");
+      penCol.classList.add("col-3", "col-md-3");
+
+      var penP = document.createElement("p");
+      penP.classList.add("rosterName");
+      var num = activeRoster[i].salary - activeRoster[i].capPenalty;
+      if (num < 0) {
+        penP.style.color = "#ca5656";
+      }
+      penP.innerHTML = "$" + addCommas(num);
+      penCol.appendChild(penP);
+      row2.appendChild(penCol);
+
+
       var cutCol = document.createElement("div");
       cutCol.classList.add("col-3");
  ///<i class="fa fa-minus-circle" aria-hidden="true"></i>
@@ -827,9 +898,9 @@ function generateRoster() {
 
       cutButton.appendChild(icon);
       cutCol.appendChild(cutButton);
-      row.appendChild(cutCol);
+      row2.appendChild(cutCol);
     }
-    root.appendChild(row);
+    root.appendChild(row2);
   }
 }
 
@@ -839,6 +910,75 @@ function cutPlayer(guy) {
   activeRoster.splice(index, 1);
   updateCapBar(); // fix
   generateRoster();
+}
+
+
+function playersPressed() {
+  document.getElementById("draftPoolHeader").style.display = "flex";
+  document.getElementById("draftPoolCont").style.display = "block";
+  document.getElementById("pickHistoryHeader").style.display = "none";
+  document.getElementById("pickHistoryCont").style.display = "none";
+  generateDraftPool("fifty");
+}
+
+function pickHistoryPressed() {
+  document.getElementById("draftPoolHeader").style.display = "none";
+  document.getElementById("draftPoolCont").style.display = "none";
+  document.getElementById("pickHistoryHeader").style.display = "flex";
+  document.getElementById("pickHistoryCont").style.display = "block";
+  generatePickHistory();
+}
+
+function generatePickHistory() {
+  var root = document.getElementById("pickHistoryCont");
+  while (root.firstChild) {
+    root.removeChild(root.firstChild);
+  }
+  for (let i = (draftSummary.length - 1); i >= 0; i--) {
+    var row = document.createElement("div");
+    row.classList.add("row");
+    row.style.borderBottom = "1px solid #282520";
+
+    var teamCol = document.createElement("div");
+    teamCol.classList.add("col-md-1", "col-2");
+
+    var teamP = document.createElement("img");
+    teamP.classList.add("phLogo");
+    teamP.setAttribute("src", draftSummary[i][0].logo);
+    teamCol.appendChild(teamP);
+    row.appendChild(teamCol);
+
+
+    var pickCol = document.createElement("div");
+    pickCol.classList.add("col-md-1", "col-2");
+
+    var pickP = document.createElement("p");
+    pickP.classList.add("phPick");
+    pickP.innerHTML = i + 1;
+    pickCol.appendChild(pickP);
+    row.appendChild(pickCol);
+
+    var nameCol = document.createElement("div");
+    nameCol.classList.add("col-md-4", "col-6");
+
+    var nameP = document.createElement("p");
+    nameP.classList.add("phName", "myauto");
+    nameP.innerHTML = draftSummary[i][1].name;
+    nameCol.appendChild(nameP);
+    row.appendChild(nameCol);
+
+    var schoolCol = document.createElement("div");
+    schoolCol.classList.add("col-md-4", "col-0", "d-none", "d-md-block");
+
+    var schoolP = document.createElement("p");
+    schoolP.classList.add("phSchool");
+    schoolP.innerHTML = draftSummary[i][1].school;
+    schoolCol.appendChild(schoolP);
+    row.appendChild(schoolCol);
+
+    // }
+    root.appendChild(row);
+  }
 }
 
 function generateDraftPool(kind) {
@@ -938,7 +1078,7 @@ function generateDraftPool(kind) {
            }else {
     tempArray = draftPlayers;
   }
-  console.log(tempArray);
+
   var root = document.getElementById("draftPoolCont");
   while (root.firstChild) {
     root.removeChild(root.firstChild);
@@ -1013,6 +1153,37 @@ function advanceFA() {
   document.getElementById("advanceButton").setAttribute("onclick", "doneFA()");
   document.getElementById("advanceButton").innerHTML = "GO TO DRAFT";
   document.getElementById("faHead").innerHTML = "FREE AGENCY";
+}
+
+function addCommas(num) {
+  var neg = false;
+  if (num < 0) {
+    neg = true;
+  }
+  var str = num.toString();
+  if (neg) {
+    str = str.substr(1);
+  }
+  var count = 0;
+  var newStr = "";
+  for (var i = str.length - 1; i > -1; i--) {
+    if (count == 2) {
+      var additive = "," + str[i];
+      newStr = additive.concat(newStr);
+      count = 0;
+      continue;
+    } else {
+      newStr = str[i].concat(newStr);
+    }
+    count++;
+  }
+  if (newStr[0] == ",") {
+    newStr = newStr.substring(1);
+  }
+  if (neg) {
+    newStr = "-" + newStr;
+  }
+  return newStr;
 }
 
 function doneFA() {
@@ -1178,7 +1349,7 @@ function startDraft(n) {
       }
       if (draftOrder[i][k] != nyj) {
         var teamPicking = draftOrder[i][k];
-        var playerTaken = draftPlayers[0]; /// edit to make more random
+        var playerTaken = getPick(teamPicking); /// edit to make more random
         draftSummary.push([teamPicking, playerTaken]);
         taken.push(playerTaken);
         const index = draftPlayers.indexOf(playerTaken);
@@ -1215,7 +1386,47 @@ function startDraft(n) {
 }
 
 
+function getPick(team) {
+  var amount = team.needs.length;
+  var possiblePicks = [];
+  var qb;
+  if (amount > 0) {
+    for (var i = 0; i < amount; i++) {
+      var positionNeed = team.needs[i];
+      for (var j = 0; j < draftPlayers.length; j++) {
+        if (draftPlayers[j].pos == positionNeed) {     ////// you can make a decreasing var for random
+          possiblePicks.push(draftPlayers[j]);
+          if (draftPlayers[j].pos === "QB") {
+            qb = draftPlayers[j];
+          }
+          break;
+        }
+      }
+    }
 
+    if (draftSummary.length < 2) {
+      var pick = draftPlayers[0];
+    } else {
+      if (draftSummary.length < 15 && team.needs.includes("QB")) {
+        possiblePicks.push(qb);
+        possiblePicks.push(qb);
+        possiblePicks.push(qb);
+        possiblePicks.push(qb);
+        possiblePicks.push(qb);
+        possiblePicks.push(qb);
+      }
+      var rand = Math.floor(Math.random() * (possiblePicks.length - 1));
+      var pick = possiblePicks[rand];
+    }
+    const index = team.needs.indexOf(pick.pos);
+    if (index > -1) {
+      team.needs.splice(index, 1);
+    }
+    return pick;
+  } else {
+    return draftPlayers[0];
+  }
+}
 
 function draftPlayer(guy) {
   // var teamPicking = draftOrder[i][k];
@@ -1287,17 +1498,30 @@ function generateBroadFA() {
       var signCol = document.createElement("div");
       signCol.classList.add("col-12", "col-md-4");
 
-      var signButton = document.createElement("button");
-      signButton.classList.add("signButton", "bttn-slant", "bttn-md", "bttn-success", "butt");
-      signButton.innerHTML = "SIGN";
-      signButton.addEventListener('click', function() {
-        signBroadFA(broadFA[i]);
-      });
+
+      var sal = broadFA[i].salary = (broadFA[i].cTotal * 1000000) / broadFA[i].cYears;
+      if (getCapRoom() - sal < 0) {
+        var signButton = document.createElement("p");
+        signButton.style.backgroundColor = "#ca5656";
+        signButton.style.paddingLeft = "15px";
+        signButton.innerHTML = "NOT ENOUGH SPACE";
+      } else {
+        var signButton = document.createElement("button");
+        signButton.classList.add("signButton", "bttn-slant", "bttn-md", "bttn-success", "butt");
+        signButton.innerHTML = "SIGN";
+        signButton.addEventListener('click', function() {
+          signBroadFA(broadFA[i]);
+        });
+      }
       signCol.appendChild(signButton);
       row.appendChild(signCol);
     }
 
     if (offeredArr.includes(broadFA[i])) {
+      row.style.opacity = ".5";
+    }
+    var sal = broadFA[i].salary = (broadFA[i].cTotal * 1000000) / broadFA[i].cYears;
+    if (getCapRoom() - sal < 0) {
       row.style.opacity = ".5";
     }
     root.appendChild(row);
@@ -1327,16 +1551,18 @@ function getSalaryHit() {
 
 function getCapRoom() {
   var salaryNum = getSalaryHit();
+  console.log(salaryNum);
   var cutPenalties = 0;
   for (let i = 0; i < cutArr.length; i++) {
     cutPenalties += cutArr[i].capPenalty;
   }
+  console.log(salaryNum + deadCap);
   var capRoom = salaryCap - (salaryNum + deadCap + cutPenalties);
   return capRoom;
 }
 
 function updateCapBar() {
-  document.getElementById("capSpaceText").innerHTML = "Cap Space: $" + getCapRoom();
+  document.getElementById("capSpaceText").innerHTML = "Cap Space: $" + addCommas(getCapRoom());
 }
 
 
