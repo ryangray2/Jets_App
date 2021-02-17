@@ -20,6 +20,8 @@ var leftOffShow = 0;
 var showAmount = 0;
 
 var sumCap = "";
+var broad = false;
+var currKind = "all";
 
 function load() {
   console.log(draftOrder);
@@ -630,14 +632,14 @@ function signBroadFA(guy) {
       // const index = teamFA.indexOf(5);
       // teamFA.splice(index, 1);
       updateCapBar() // fix
-      generateBroadFA();
+      generateBroadFA(currKind);
       generateRoster();
 
     } else {
       popUp(guy, false);
 
       offeredArr.push(guy);
-      generateBroadFA();
+      generateBroadFA(currKind);
     }
 
   }
@@ -1175,10 +1177,12 @@ function generateDraftPool(kind) {
 }
 
 function advanceFA() {
-  generateBroadFA();
+  broad = true;
+  generateBroadFA(currKind);
   document.getElementById("advanceButton").setAttribute("onclick", "doneFA()");
   document.getElementById("advanceButton").innerHTML = "GO TO DRAFT";
   document.getElementById("faHead").innerHTML = "FREE AGENCY";
+  document.getElementById("broadSort").style.display = "block";
 }
 
 function addCommas(num) {
@@ -1575,6 +1579,12 @@ function generateSummary() {
       }
     }
   }
+  const screenshotTarget = document.getElementById("sMoves");
+
+  html2canvas(screenshotTarget).then((canvas) => {
+    const base64image = canvas.toDataURL("image/png");
+    window.location.href = base64image;
+});
 }
 
 function generateTradeOptions() {
@@ -1668,6 +1678,9 @@ function getPick(team) {
   var amount = team.needs.length;
   var possiblePicks = [];
   var qb;
+  if (draftPlayers[0].rank <= (draftSummary.length - 15)) {
+    return draftPlayers[0];
+  }
   if (amount > 0) {
     for (var i = 0; i < amount; i++) {
       var positionNeed = team.needs[i];
@@ -1724,22 +1737,127 @@ function draftPlayer(guy) {
   startDraft(leftOff);
 }
 
-function generateBroadFA() {
+function generateBroadFA(kind) {
+  currKind = kind;
+  var tempArray = [];
+  var amount = broadFA.length;
+  if (kind === "QB") {
+    var count = 0;
+    while (count < amount) {
+      if (broadFA[count].pos === "QB") {
+        tempArray.push(broadFA[count]);
+      }
+      count++;
+    }
+    amount = tempArray.length;
+  } else if (kind === "RB") {
+      var count = 0;
+      while (count < amount) {
+        if (broadFA[count].pos === "RB") {
+          tempArray.push(broadFA[count]);
+        }
+        count++;
+      }
+      amount = tempArray.length;
+    }
+    else if (kind === "WR") {
+       var count = 0;
+       while (count < amount) {
+         if (broadFA[count].pos === "WR") {
+           tempArray.push(broadFA[count]);
+         }
+         count++;
+       }
+       amount = tempArray.length;
+     }
+     else if (kind === "TE") {
+        var count = 0;
+        while (count < amount) {
+          if (broadFA[count].pos === "TE") {
+            tempArray.push(broadFA[count]);
+          }
+          count++;
+        }
+        amount = tempArray.length;
+      }
+      else if (kind === "OL") {
+         var count = 0;
+         while (count < amount) {
+           if (broadFA[count].pos === "IOL" || broadFA[count].pos === "OT") {
+             tempArray.push(broadFA[count]);
+           }
+           count++;
+         }
+         amount = tempArray.length;
+       }
+       else if (kind === "DL") {
+          var count = 0;
+          while (count < amount) {
+            if (broadFA[count].pos === "EDGE" || broadFA[count].pos === "IDL") {
+              tempArray.push(broadFA[count]);
+            }
+            count++;
+          }
+          amount = tempArray.length;
+        }
+        else if (kind === "LB") {
+           var count = 0;
+           while (count < amount) {
+             if (broadFA[count].pos === "LB") {
+               tempArray.push(broadFA[count]);
+             }
+             count++;
+           }
+           amount = tempArray.length;
+         }
+         else if (kind === "CB") {
+            var count = 0;
+            while (count < amount) {
+              if (broadFA[count].pos === "CB") {
+                tempArray.push(broadFA[count]);
+              }
+              count++;
+            }
+            amount = tempArray.length;
+          }
+          else if (kind === "S") {
+             var count = 0;
+             while (count < amount) {
+               if (broadFA[count].pos === "S") {
+                 tempArray.push(broadFA[count]);
+               }
+               count++;
+             }
+             amount = tempArray.length;
+           }
+           else if (kind === "K") {
+              var count = 0;
+              while (count < amount) {
+                if (broadFA[count].pos === "K") {
+                  tempArray.push(broadFA[count]);
+                }
+                count++;
+              }
+              amount = tempArray.length;
+            }else {
+    tempArray = broadFA;
+  }
+
   var root = document.getElementById("faNavCont");
   while (root.firstChild) {
     root.removeChild(root.firstChild);
   }
-  for (let i = 0; i < broadFA.length; i++) {
+  for (let i = 0; i < tempArray.length; i++) {
     var row = document.createElement("div");
     row.classList.add("row");
 
     var nameCol = document.createElement("div");
     nameCol.classList.add("col-12");
-    nameCol.setAttribute("id", broadFA[i].name.replace(/\s+/g, ''));
+    nameCol.setAttribute("id", tempArray[i].name.replace(/\s+/g, ''));
 
     var nameP = document.createElement("p");
     nameP.classList.add("faName");
-    nameP.innerHTML = broadFA[i].name;
+    nameP.innerHTML = tempArray[i].name;
     nameCol.appendChild(nameP);
     row.appendChild(nameCol);
 
@@ -1750,7 +1868,7 @@ function generateBroadFA() {
 
     var posP = document.createElement("p");
     posP.classList.add("faPos");
-    posP.innerHTML = broadFA[i].pos + "  /  Age: " + broadFA[i].age;
+    posP.innerHTML = tempArray[i].pos + "  /  Age: " + tempArray[i].age;
     posCol.appendChild(posP);
     row.appendChild(posCol);
 
@@ -1768,19 +1886,19 @@ function generateBroadFA() {
 
     var priceP = document.createElement("p");
     priceP.classList.add("faPrice");
-    priceP.innerHTML = broadFA[i].cYears + " yr./$" + broadFA[i].cTotal + "M";
+    priceP.innerHTML = tempArray[i].cYears + " yr./$" + tempArray[i].cTotal + "M";
     priceCol.appendChild(priceP);
     row.appendChild(priceCol);
 
     // var dumCol = document.createElement("div");
     // dumCol.classList.add("col-3");
     // row.appendChild(dumCol);
-    if (!offeredArr.includes(broadFA[i])) {
+    if (!offeredArr.includes(tempArray[i])) {
       var signCol = document.createElement("div");
       signCol.classList.add("col-12", "col-md-4");
 
 
-      var sal = broadFA[i].salary = (broadFA[i].cTotal * 1000000) / broadFA[i].cYears;
+      var sal = tempArray[i].salary = (tempArray[i].cTotal * 1000000) / tempArray[i].cYears;
       if (getCapRoom() - sal < 0) {
         var signButton = document.createElement("p");
         signButton.style.backgroundColor = "#ca5656";
@@ -1791,17 +1909,17 @@ function generateBroadFA() {
         signButton.classList.add("signButton", "bttn-slant", "bttn-md", "bttn-success", "butt");
         signButton.innerHTML = "SIGN";
         signButton.addEventListener('click', function() {
-          signBroadFA(broadFA[i]);
+          signBroadFA(tempArray[i]);
         });
       }
       signCol.appendChild(signButton);
       row.appendChild(signCol);
     }
 
-    if (offeredArr.includes(broadFA[i])) {
+    if (offeredArr.includes(tempArray[i])) {
       row.style.opacity = ".5";
     }
-    var sal = broadFA[i].salary = (broadFA[i].cTotal * 1000000) / broadFA[i].cYears;
+    var sal = broadFA[i].salary = (tempArray[i].cTotal * 1000000) / tempArray[i].cYears;
     if (getCapRoom() - sal < 0) {
       row.style.opacity = ".5";
     }
@@ -1862,10 +1980,17 @@ function countPlayers() {
 
 function faNav() {
   document.getElementById("faNavCont").style.display = "block";
+  if (broad) {
+    document.getElementById("broadSort").style.display = "block";
+  }
+
   document.getElementById("rosterNavCont").style.display = "none";
 }
 
 function rosterNav() {
   document.getElementById("faNavCont").style.display = "none";
+  if (broad) {
+    document.getElementById("broadSort").style.display = "none";
+  }
   document.getElementById("rosterNavCont").style.display = "block";
 }
