@@ -22,7 +22,7 @@ var HenryAnderson = {
 };
 var JoshAndrews = {
   name: 'Josh Andrews',
-  pos: 'G',
+  pos: 'IOL',
   age: '29',
   height: '6-2',
   weight: '311',
@@ -64,7 +64,7 @@ var TarellBasham = {
 };
 var MekhiBecton = {
   name: 'Mekhi Becton ',
-  pos: 'T',
+  pos: 'OT',
   age: '21',
   height: '6-7',
   weight: '364',
@@ -108,7 +108,7 @@ var LawrenceCager = {
 };
 var ElijahCampbell = {
   name: 'Elijah Campbell',
-  pos: 'DB',
+  pos: 'CB',
   age: '25',
   height: '5-11',
   weight: '193',
@@ -128,7 +128,7 @@ var BlakeCashman = {
 };
 var CameronClark = {
   name: 'Cameron Clark',
-  pos: 'G',
+  pos: 'IOL',
   age: '23',
   height: '6-4',
   weight: '308',
@@ -213,7 +213,7 @@ var JoshDoctson = {
 
 var ChumaEdoga = {
   name: 'Chuma Edoga',
-  pos: 'T',
+  pos: 'OT',
   age: '23',
   height: '6-3',
   weight: '308',
@@ -223,7 +223,7 @@ var ChumaEdoga = {
 };
 var PatElflein = {
   name: 'Pat Elflein',
-  pos: 'G',
+  pos: 'IOL',
   age: '26',
   height: '6-3',
   weight: '303',
@@ -234,7 +234,7 @@ var PatElflein = {
 };
 var GeorgeFant = {
   name: 'George Fant',
-  pos: 'T',
+  pos: 'OT',
   age: '28',
   height: '6-5',
   weight: '322',
@@ -327,7 +327,7 @@ var PeteGuerriero = {
 };
 var JavelinGuidry = {
   name: 'Javelin Guidry',
-  pos: 'DB',
+  pos: 'CB',
   age: '22',
   height: '5-10',
   weight: '190',
@@ -439,7 +439,7 @@ var TyJohnson = {
 };
 var LeoKoloamatangi = {
   name: 'Leo Koloamatangi',
-  pos: 'C',
+  pos: 'IOL',
   age: '26',
   height: '6-5',
   weight: '305',
@@ -449,7 +449,7 @@ var LeoKoloamatangi = {
 };
 var AlexLewis = {
   name: 'Alex Lewis',
-  pos: 'G',
+  pos: 'IOL',
   age: '28',
   height: '6-6',
   weight: '305',
@@ -522,7 +522,7 @@ var MarcusMaye = {
 };
 var ConorMcDermott = {
   name: 'Conor McDermott',
-  pos: 'T',
+  pos: 'OT',
   age: '28',
   height: '6-8',
   weight: '305',
@@ -543,7 +543,7 @@ var BradleyMcDougald = {
 };
 var ConnorMcGovern = {
   name: 'Connor McGovern',
-  pos: 'C',
+  pos: 'IOL',
   age: '27',
   height: '6-4',
   weight: '306',
@@ -603,7 +603,7 @@ var CJMosley = {
 }
 var JimmyMurray = {
   name: 'Jimmy Murray',
-  pos: 'C',
+  pos: 'IOL',
   age: '25',
   height: '6-5',
   weight: '305',
