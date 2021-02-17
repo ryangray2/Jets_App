@@ -219,6 +219,10 @@ padding-top: 10px;
 color: black;
 }
 
+#broadSort {
+  display: none;
+}
+
 #summary {
   display: none;
   z-index: 200;
