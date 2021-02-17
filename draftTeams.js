@@ -35,7 +35,7 @@ var dal = {
   name: "Cowboys",
   logo: "https://static.www.nfl.com/image/private/f_auto/league/ieid8hoygzdlmzo0tnf6",
   draftResults: [],
-  needs: ["OT", "CB", "IDL", "EDGE"]
+  needs: ["OT", "CB", "IDL", "EDGE", "LB"]
 };
 
 var det = {
@@ -43,7 +43,7 @@ var det = {
   name: "Lions",
   logo: "https://res.cloudinary.com/nflleague/image/private/f_auto/league/ocvxwnapdvwevupe4tpr",
   draftResults: [],
-  needs: ["WR", "CB", "OT"]
+  needs: ["WR", "CB", "OT", "LB"]
 };
 
 var gb = {
@@ -155,7 +155,7 @@ var cle = {
   name: "Browns",
   logo: "https://res.cloudinary.com/nflleague/image/private/f_auto/league/grxy59mqoflnksp2kocc",
   draftResults: [],
-  needs: ["EDGE", "CB", "IDL", "WR"]
+  needs: ["EDGE", "CB", "IDL", "WR", "LB"]
 };
 
 var den = {
@@ -256,11 +256,11 @@ var ten = {
 
 
 var draftOrder = [
-  [jax, nyj, mia, atl, cin, phi, det, car, den, dal, nyg, sf, lac, min, ne, az, lv, mia, was, chi, ind, ten, nyj, pit, jax, cle, bal, no, tb, buf, gb, kc],
-  [jax, nyj, atl, mia, phi, cin, car, den, det, nyg, sf, dal, jax, ne, lac, lv, az, mia, was, chi, ten, ind, pit, sea, lar, bal, cle, no, tb, buf, gb, kc],
-  [jax, nyj, hou, atl, cin, phi, den, det, car, was, dal, nyg, lac, min, az, lv, mia, was, chi, ind, ten, nyj, pit, lar, cle, min, cle, tb, buf, gb, kc],
-  [jax, nyj, atl, hou, cle, cin, det, car, den, dal, nyg, sf, lac, min, ne, lv, hou, mia, was, min, ten, ind, pit, sea, jax, bal, cle, no, tb, min, gb, kc],
-  [jax, nyj, hou, atl, cin, phi, car, den, det, nyj, sf, phi, min, ne, lac, az, buf, lv, was, chi, ind, ten, sea, bal, cle, jax, min, sf, tb, buf, gb, kc],
-  [ten, ne, atl, hou, phi, cin, den, dal, car, sf, ne, nyg, nyj, lac, min, nyg, hou, lv, chi, lac, ind, mia, sea, lar, bal, cle, hou, pit, buf, gb, ten],
-  [jax, sf, hou, chi, cin, phi, cin, buf, den, dal, den, sf, lac, min, ne, az, was, pit, was, lv, ind, jax, sea, tb, lar, den, pit, tb, cle, gb, kc]
+  [jax, nyj, mia, atl, cin, phi, det, car, den, dal, nyg, sf, lac, min, ne, az, lv, mia, was, chi, ind, ten, nyj, pit, jax, cle, bal, no, gb, buf, kc, tb],
+  [jax, nyj, mia, atl, cin, phi, det, car, den, dal, nyg, sf, lac, jax, ne, az, lv, mia, was, chi, ind, ten, sea, pit, lar, cle, bal, no, gb, buf, kc, tb],
+  [jax, nyj, hou, atl, cin, phi, det, car, den, dal, nyg, was, lac, min, az, lv, mia, was, chi, ind, ten, nyj, pit, det, cle, min, cle, gb, buf, kc, tb, ne, lac, no, dal, ten, lar, sf, bal, no],
+  [jax, nyj, hou, atl, cin, det, car, den, dal, nyg, sf, lac, min, ne, hou, lv, mia, was, min, ind, ten, sea, pit, jax, cle, bal, no, gb, min, kc, tb, ne, dal, lar, pit, gb, min, kc, ne],
+  [jax, nyj, hou, atl, cin, phi, det, car, den, phi, nyj, sf, lac, min, ne, az, buf, lv, was, chi, ind, ten, sea, bal, cle, jax, min, sf, gb, buf, kc, tb, gb, dal, kc, atl, sf, atl, bal, car, tb],
+  [ten, ne, hou, atl, cin, phi, dal, car, den, ne, nyg, sf, lac, min, nyj, nyg, mia, hou, chi, ind, lac, mia, pit, lar, cle, bal, hou, gb, buf, ten, kc, atl, chi, phi, gb, min],
+  [jax, sf, hou, atl, cin, phi, sea, car, den, dal, den, sf, lac, min, ne, az, was, pit, was, lv, ind, jax, cin, tb, lar, cle, pit, gb, den, mia, tb]
 ];
