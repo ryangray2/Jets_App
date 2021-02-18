@@ -17,6 +17,7 @@ body {
   font-family: "Coda Caption" !important;
   outline: none;
 box-shadow: none;
+margin-bottom: 5px;
 }
 
 button {
@@ -78,6 +79,7 @@ h5 {
 #pickHistoryHeader {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+  display: none;
 }
 
 #trans4 {
@@ -230,9 +232,13 @@ color: black;
   height: 100%;
   width: 100%;
     background-color: #125740;
-    background-image: url("jetXlogofade.png");
+    /* background-image: url("jetXlogofade.png"); */
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+#summaryLogo {
+  height: 9vh;
 }
 
 .sumAddDrop {
@@ -325,7 +331,7 @@ color: black;
   display: none;
   z-index: 500;
   position: absolute;
-  height: 100%;
+  height: 200%;
   width: 100%;
   background-color: #27251f;
 }
