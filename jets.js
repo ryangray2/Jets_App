@@ -24,6 +24,21 @@ var broad = false;
 var currKind = "all";
 
 function load() {
+
+    var tempArray = [nyj, pit, chi, sf, no, atl, det, car, den, was];
+    for (let i = 0; i < tempArray.length; i++) {
+      var count = 0;
+      console.log(tempArray[i].name);
+      for (let j = 0; j < draftOrder.length; j++) {
+        for (let k = 0; k < draftOrder[j].length; k++) {
+          count += 1;
+          if (tempArray[i].name === draftOrder[j][k].name) {
+            console.log("[" + j + ", " + k + "] #" + count);
+          }
+        }
+      }
+    }
+
   console.log("players: " + draftPlayers.length);
   console.log(draftOrder);
   divideRoster();
@@ -430,6 +445,7 @@ function makeOffer() {
   document.getElementById("watsonResult").style.display = "block";
   if (accepted) {
     document.getElementById("resultText").innerHTML = "Accepted";
+    document.getElementById("resultImage").setAttribute("src", "watsonJets.png");
     activeRoster.push(DeshaunWatson);
     tradedFor.push(DeshaunWatson.name);
     for (var i = 0; i < assetsOffered.length; i++) {
@@ -453,6 +469,7 @@ function makeOffer() {
     console.log(draftOrder);
   } else {
     document.getElementById("resultText").innerHTML = "Rejected";
+    document.getElementById("resultImage").setAttribute("src", "watsonTexans.png");
   }
 }
 
@@ -697,7 +714,7 @@ function generateRoster() {
       case "OT":
         aNum = 18;
         break;
-      case "G":
+      case "IOL":
         aNum = 17;
         break;
       case "C":
@@ -777,7 +794,7 @@ function generateRoster() {
       case "OT":
         bNum = 18;
         break;
-      case "G":
+      case "IOL":
         bNum = 17;
         break;
       case "C":
@@ -1284,10 +1301,10 @@ function sRoster() {
 }
 
 function generateSRoster() {
-  var root = document.getElementById("sRoster");
-  while (root.firstChild) {
-    root.removeChild(root.firstChild);
-  }
+  // var root = document.getElementById("sRoster");
+  // while (root.firstChild) {
+  //   root.removeChild(root.firstChild);
+  // }
   activeRoster.sort(function(a,b) {
     var aNum;
     switch(a.pos) {
@@ -1318,7 +1335,7 @@ function generateSRoster() {
       case "OT":
         aNum = 18;
         break;
-      case "G":
+      case "IOL":
         aNum = 17;
         break;
       case "C":
@@ -1398,7 +1415,7 @@ function generateSRoster() {
       case "OT":
         bNum = 18;
         break;
-      case "G":
+      case "IOL":
         bNum = 17;
         break;
       case "C":
@@ -1453,39 +1470,45 @@ function generateSRoster() {
   });
 
 
+  var test = document.getElementById("sOffense");
 
-  var row = document.createElement("div");
-  row.classList.add("row");
-
-  var posCol = document.createElement("div");
-  posCol.classList.add("col-2");
-
-  var posP = document.createElement("p");
-  posP.classList.add("rosterHead");
-  posP.innerHTML = "<b>POS</b>";
-  posCol.appendChild(posP);
-  row.appendChild(posCol);
-
-  var nameCol = document.createElement("div");
-  nameCol.classList.add("col-4", "col-md-4");
-
-  var nameP = document.createElement("p");
-  nameP.classList.add("rosterHead");
-  nameP.innerHTML = "<b>NAME</b>";
-  nameCol.appendChild(nameP);
-  row.appendChild(nameCol);
-
-
-  row.style.borderBottom = "1px solid #125740";
-
-  root.appendChild(row);
+  // console.log(test);
+  // var row = document.createElement("div");
+  // row.classList.add("row");
+  //
+  // var posCol = document.createElement("div");
+  // posCol.classList.add("col-2");
+  //
+  // var posP = document.createElement("p");
+  // posP.classList.add("rosterHead");
+  // posP.innerHTML = "<b>POS</b>";
+  // posCol.appendChild(posP);
+  // row.appendChild(posCol);
+  //
+  // var nameCol = document.createElement("div");
+  // nameCol.classList.add("col-4", "col-md-4");
+  //
+  // var nameP = document.createElement("p");
+  // nameP.classList.add("rosterHead");
+  // nameP.innerHTML = "<b>NAME</b>";
+  // nameCol.appendChild(nameP);
+  // row.appendChild(nameCol);
+  //
+  //
+  // row.style.borderBottom = "1px solid #125740";
+  //
+  // root.appendChild(row);
 
   for (let i = 0; i < activeRoster.length; i++) {
+    // console.log(i);
+    if (activeRoster[i].pos === "IDL") {
+      test = document.getElementById("sDefense");
+    }
     var row2 = document.createElement("div");
     row2.classList.add("row");
 
     var posCol2 = document.createElement("div");
-    posCol2.classList.add("col-2");
+    posCol2.classList.add("col-3", "col-md-2");
 
     var posP2 = document.createElement("p");
     posP2.classList.add("rosterPos");
@@ -1495,7 +1518,7 @@ function generateSRoster() {
     row2.appendChild(posCol2);
 
     var nameCol2 = document.createElement("div");
-    nameCol2.classList.add("col-8", "col-md-8");
+    nameCol2.classList.add("col-9", "col-md-8");
 
     var nameP2 = document.createElement("p");
     nameP2.classList.add("rosterName");
@@ -1506,7 +1529,7 @@ function generateSRoster() {
 
 
 
-    root.appendChild(row2);
+    test.appendChild(row2);
   }
 }
 
@@ -1808,16 +1831,26 @@ function generateBroadFA(kind) {
          }
          amount = tempArray.length;
        }
-       else if (kind === "DL") {
+       else if (kind === "IDL") {
           var count = 0;
           while (count < amount) {
-            if (broadFA[count].pos === "EDGE" || broadFA[count].pos === "IDL") {
+            if (broadFA[count].pos === "IDL") {
               tempArray.push(broadFA[count]);
             }
             count++;
           }
           amount = tempArray.length;
         }
+        else if (kind === "EDGE") {
+           var count = 0;
+           while (count < amount) {
+             if (broadFA[count].pos === "EDGE") {
+               tempArray.push(broadFA[count]);
+             }
+             count++;
+           }
+           amount = tempArray.length;
+         }
         else if (kind === "LB") {
            var count = 0;
            while (count < amount) {

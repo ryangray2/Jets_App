@@ -741,7 +741,7 @@ var QuinnenWilliams = {
 };
 var GregVanRoten = {
   name: 'Greg Van Roten',
-  pos: 'OG',
+  pos: 'IOL',
   age: '30',
   height: '6-3',
   weight: '308',

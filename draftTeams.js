@@ -91,7 +91,7 @@ var phi = {
   name: "Eagles",
   logo: "https://res.cloudinary.com/nflleague/image/private/f_auto/league/puhrqgj71gobgdkdo6uq",
   draftResults: [],
-  needs: ["WR", "RB", "OT", "LB"]
+  needs: ["WR", "RB", "OT", "LB", "TE"]
 };
 
 var sf = {
@@ -123,7 +123,7 @@ var was = {
   name: "Football Team",
   logo: "unnamed.png",
   draftResults: [],
-  needs: ["QB", "OT", "WR", "CB", "S"]
+  needs: ["QB", "OT", "WR", "CB", "S", "TE"]
 };
 
 var bal = {
@@ -147,7 +147,7 @@ var cin = {
   name: "Bengals",
   logo: "https://res.cloudinary.com/nflleague/image/private/f_auto/league/okxpteoliyayufypqalq",
   draftResults: [],
-  needs: ["WR", "OT"]
+  needs: ["WR", "OT", "TE"]
 };
 
 var cle = {
@@ -258,8 +258,8 @@ var ten = {
 var draftOrder = [
   [jax, nyj, mia, atl, cin, phi, det, car, den, dal, nyg, sf, lac, min, ne, az, lv, mia, was, chi, ind, ten, nyj, pit, jax, cle, bal, no, gb, buf, kc, tb],
   [jax, nyj, mia, atl, cin, phi, det, car, den, dal, nyg, sf, lac, jax, ne, az, lv, mia, was, chi, ind, ten, sea, pit, lar, cle, bal, no, gb, buf, kc, tb],
-  [jax, nyj, hou, atl, cin, phi, det, car, den, dal, nyg, was, lac, min, az, lv, mia, was, chi, ind, ten, nyj, pit, det, cle, min, cle, gb, buf, kc, tb, ne, lac, no, dal, ten, lar, sf, bal, no],
-  [jax, nyj, hou, atl, cin, det, car, den, dal, nyg, sf, lac, min, ne, hou, lv, mia, was, min, ind, ten, sea, pit, jax, cle, bal, no, gb, min, kc, tb, ne, dal, lar, pit, gb, min, kc, ne],
+  [jax, nyj, hou, atl, cin, phi, det, car, den, dal, nyg, was, lac, min, az, lv, mia, was, chi, phi, ten, nyj, pit, det, cle, min, cle, gb, buf, kc, tb, ne, lac, no, dal, ten, lar, sf, lar, bal, no],
+  [jax, nyj, hou, atl, cin, cle, det, car, den, dal, nyg, sf, lac, min, ne, hou, lv, mia, was, min, ind, ten, sea, pit, jax, cle, bal, no, gb, min, kc, tb, ne, dal, lar, pit, gb, min, kc, ne],
   [jax, nyj, hou, atl, cin, phi, det, car, den, phi, nyj, sf, lac, min, ne, az, buf, lv, was, chi, ind, ten, sea, bal, cle, jax, min, sf, gb, buf, kc, tb, gb, dal, kc, atl, sf, atl, bal, car, tb],
   [ten, ne, hou, atl, cin, phi, dal, car, den, ne, nyg, sf, lac, min, nyj, nyg, mia, hou, chi, ind, lac, mia, pit, lar, cle, bal, hou, gb, buf, ten, kc, atl, chi, phi, gb, min],
   [jax, sf, hou, atl, cin, phi, sea, car, den, dal, den, sf, lac, min, ne, az, was, pit, was, lv, ind, jax, cin, tb, lar, cle, pit, gb, den, mia, tb]

@@ -181,6 +181,9 @@
         <div class="col-12">
           <p id="resultText"></p>
         </div>
+        <div class="col-12">
+          <img id="resultImage">
+        </div>
       </div>
       <div class="row text-center">
         <div class="col-12">
@@ -238,7 +241,8 @@
           <a class="dropdown-item" onclick="generateBroadFA('WR')">WR</a>
           <a class="dropdown-item" onclick="generateBroadFA('TE')">TE</a>
           <a class="dropdown-item" onclick="generateBroadFA('OL')">OL</a>
-          <a class="dropdown-item" onclick="generateBroadFA('DL')">DL</a>
+          <a class="dropdown-item" onclick="generateBroadFA('IDL')">IDL</a>
+          <a class="dropdown-item" onclick="generateBroadFA('EDGE')">EDGE</a>
           <a class="dropdown-item" onclick="generateBroadFA('LB')">LB</a>
           <a class="dropdown-item" onclick="generateBroadFA('CB')">CB</a>
           <a class="dropdown-item" onclick="generateBroadFA('S')">S</a>
@@ -391,7 +395,7 @@
         <h1 id="summaryHead" class="slide-in-left2">SUMMARY</h1>
       </div>
       <div class="col-4 col-md-9">
-        <img id="summaryLogo" src="jetXLogo.png">
+        <img id="summaryLogo" src="jetXlogo.png">
       </div>
     </div>
     <div class="row">
@@ -447,6 +451,9 @@
         <div class="col-12">
           <p id="screenshot">Screenshot and Share</p>
         </div>
+        <div class="col-12">
+          <p id="screenshot2">(Click One)</p>
+        </div>
         <div class="col-6 col-md-6">
           <a id="twitter" href="https://twitter.com/jetsxfactor" target="_blank"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
         </div>
@@ -456,6 +463,12 @@
       </div>
       </div>
       <div class="container" id="sRoster">
+        <div class="row">
+          <div class="col-6" id="sOffense">
+          </div>
+          <div class="col-6" id="sDefense">
+          </div>
+        </div>
       </div>
   </div>
 </div>
