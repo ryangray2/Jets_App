@@ -71,7 +71,7 @@ var MekhiBecton = {
   salary: 4192284,
   img: '',
   capPenalty: 15092221,
-  tradeValue: 0,
+  tradeValue: 160,
   included: false,
   order: 1
 };
@@ -166,7 +166,7 @@ var SamDarnold = {
   salary: 9794271,
   img: '',
   capPenalty: 9624274,
-  tradeValue: 5,
+  tradeValue: 20,
   included: false,
   order: 2
 };
@@ -735,7 +735,7 @@ var QuinnenWilliams = {
   salary: 9046647,
   img: '',
   capPenalty: 19221901,
-  tradeValue: 0,
+  tradeValue: 160,
   included: false,
   order: 3
 };
@@ -815,7 +815,7 @@ var salaryCap = 211686546;
 // 150
 var pick2021_1 = {
   name: '2021 Round 1',
-  tradeValue: 70,
+  tradeValue: 10000,
   included: false,
   thisYear: true,
   index: [0, 1],
@@ -824,7 +824,7 @@ var pick2021_1 = {
 
 var pick2021_1_SEA = {
   name: '2021 Round 1 (SEA)',
-  tradeValue: 20,
+  tradeValue: 100,
   included: false,
   thisYear: true,
   index: [0, 22],
@@ -833,7 +833,7 @@ var pick2021_1_SEA = {
 
 var pick2021_2 = {
   name: '2021 Round 2',
-  tradeValue: 10,
+  tradeValue: 40,
   included: false,
   thisYear: true,
   index: [1, 1],
@@ -842,7 +842,7 @@ var pick2021_2 = {
 
 var pick2021_3 = {
   name: '2021 Round 3',
-  tradeValue: 5,
+  tradeValue: 20,
   included: false,
   thisYear: true,
   index: [2, 1],
@@ -860,7 +860,7 @@ var pick2021_3_SEA = {
 
 var pick2021_4 = {
   name: '2021 Round 4',
-  tradeValue: 5,
+  tradeValue: 0,
   included: false,
   thisYear: true,
   index: [3, 1],
@@ -869,7 +869,7 @@ var pick2021_4 = {
 
 var pick2021_5 = {
   name: '2021 Round 5',
-  tradeValue: 5,
+  tradeValue: 0,
   included: false,
   thisYear: true,
   index: [4, 1],
@@ -878,21 +878,21 @@ var pick2021_5 = {
 
 var pick2022_1 = {
   name: '2022 Round 1',
-  tradeValue: 25,
+  tradeValue: 80,
   included: false,
   order: 11
 };
 
 var pick2022_1_SEA = {
   name: '2022 Round 1 (SEA)',
-  tradeValue: 20,
+  tradeValue: 80,
   included: false,
   order: 12
 };
 
 var pick2022_2 = {
   name: '2022 Round 2',
-  tradeValue: 10,
+  tradeValue: 30,
   included: false,
   order: 13
 };
@@ -906,28 +906,28 @@ var pick2022_3 = {
 
 var pick2023_1 = {
   name: '2023 Round 1',
-  tradeValue: 15,
+  tradeValue: 70,
   included: false,
   order: 15
 };
 
 var pick2023_2 = {
   name: '2023 Round 2',
-  tradeValue: 10,
+  tradeValue: 0,
   included: false,
   order: 16
 };
 
 var pick2023_3 = {
   name: '2023 Round 3',
-  tradeValue: 5,
+  tradeValue: 0,
   included: false,
   order: 17
 };
 
 var watsonTradeAssets = [QuinnenWilliams, MekhiBecton, SamDarnold, pick2021_1,
   pick2021_1_SEA,
-  pick2021_2, pick2021_3, pick2021_3_SEA, pick2021_4, pick2021_5, pick2022_1, pick2022_1_SEA,
+  pick2021_2, pick2021_3, pick2021_3_SEA, pick2022_1, pick2022_1_SEA,
    pick2022_2, pick2022_3, pick2023_1, pick2023_2, pick2023_3];
 
 var acceptableOffers = [
