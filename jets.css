@@ -277,6 +277,14 @@ color: black;
       margin-right: auto;
 }
 
+#ryangray {
+  margin-top: 5px;
+  font-family: "Coda Caption";
+  font-style: italic;
+  color: white !important;
+  font-size: 2.5vh;
+}
+
 #screenshot {
   font-size: 3vh;
       font-family: "Coda Caption";
