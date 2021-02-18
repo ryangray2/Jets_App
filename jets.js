@@ -24,6 +24,7 @@ var broad = false;
 var currKind = "all";
 
 function load() {
+  console.log("players: " + draftPlayers.length);
   console.log(draftOrder);
   divideRoster();
   console.log(getCapRoom());
@@ -61,6 +62,7 @@ function instPressed() {
 
 function yesWatson() {
   document.getElementById("tradePrompt").style.display = "none";
+
   document.getElementById("watsonTradeAssets").style.display = "block";
   generateWatsonAssets();
 }
@@ -188,13 +190,13 @@ function generateTwoOffers(num) {
   var buttonRow = document.createElement("div");
   buttonRow.classList.add("row", "text-center");
   var r1 = document.createElement("div");
-  r1.classList.add("col-3");
+  r1.classList.add("col-0", "col-md-3");
   var rbutcol = document.createElement("div");
-  rbutcol.classList.add("col-3");
+  rbutcol.classList.add("col-6","col-md-3");
   var lbutcol = document.createElement("div");
-  lbutcol.classList.add("col-3");
+  lbutcol.classList.add("col-6", "col-md-3");
   var r2 = document.createElement("div");
-  r2.classList.add("col-3");
+  r2.classList.add("col-0", "col-md-3");
 
   if (num != twoTradeArr.length - 1) {
 
@@ -407,6 +409,21 @@ function addAsset(thing) {
   }
 }
 
+function watsonBack() {
+    document.getElementById("watsonTradeAssets").style.display = "none";
+    document.getElementById("tradePrompt").style.display = "block";
+}
+
+function darnoldBack() {
+    document.getElementById("darnoldTradeOffers").style.display = "none";
+    document.getElementById("tradePrompt").style.display = "block";
+}
+
+function twoBack() {
+    document.getElementById("twoTradeOffers").style.display = "none";
+    document.getElementById("tradePrompt").style.display = "block";
+}
+
 function makeOffer() {
   var accepted = checkTradeValue();
   document.getElementById("watsonTradeAssets").style.display = "none";
@@ -440,49 +457,49 @@ function makeOffer() {
 }
 
 
+function checkTradeValue() {
+  var value = 0;
+  for (let i = 0; i < assetsOffered.length; i++) {
+    value += assetsOffered[i].tradeValue;
+  }
+  return value >= 10200 ? true : false;
+
+  // var two = [];
+  // for (let j = 0; j < assetsOffered.length; j++) {
+  //   two.push(assetsOffered[j].order);
+  // }
+  //
+  // for (let i = 0; i < acceptableOffers.length; i++) {
+  //   var one = [];
+  //
+  //   for (let k = 0; k < acceptableOffers[i].length; k++) {
+  //     one.push(acceptableOffers[i][k].order);
+  //   }
+  //   one.sort(function(a, b){return a-b});
+  //   two.sort(function(a, b){return a-b});
+  //   console.log(one);
+  //   console.log(two);
+  //   if (one.toString() === two.toString()) {
+  //     return true;
+  //   }
+  // }
+  // return false;
+}
+
 // function checkTradeValue() {
-//   // var value = 0;
-//   // for (let i = 0; i < assetsOffered.length; i++) {
-//   //   value += assetsOffered[i].tradeValue;
-//   // }
-//   // return value >= 150 ? true : false;
-//
-//   var two = [];
-//   for (let j = 0; j < assetsOffered.length; j++) {
-//     two.push(assetsOffered[j].order);
-//   }
-//
 //   for (let i = 0; i < acceptableOffers.length; i++) {
-//     var one = [];
-//
-//     for (let k = 0; k < acceptableOffers[i].length; k++) {
-//       one.push(acceptableOffers[i][k].order);
-//     }
-//     one.sort(function(a, b){return a-b});
-//     two.sort(function(a, b){return a-b});
-//     console.log(one);
-//     console.log(two);
-//     if (one.toString() === two.toString()) {
-//       return true;
+//     var target = 0;
+//     for (let j = 0; j < assetsOffered.length; j++) {
+//       if (acceptableOffers[i].includes(assetsOffered[j])) {
+//         target++
+//         if (target === acceptableOffers[i].length) {
+//           return true;
+//         }
+//       }
 //     }
 //   }
 //   return false;
 // }
-
-function checkTradeValue() {
-  for (let i = 0; i < acceptableOffers.length; i++) {
-    var target = 0;
-    for (let j = 0; j < assetsOffered.length; j++) {
-      if (acceptableOffers[i].includes(assetsOffered[j])) {
-        target++
-        if (target === acceptableOffers[i].length) {
-          return true;
-        }
-      }
-    }
-  }
-  return false;
-}
 
 
 
@@ -1179,6 +1196,7 @@ function generateDraftPool(kind) {
 function advanceFA() {
   broad = true;
   generateBroadFA(currKind);
+  window.scrollTo(0, 0);
   document.getElementById("advanceButton").setAttribute("onclick", "doneFA()");
   document.getElementById("advanceButton").innerHTML = "GO TO DRAFT";
   document.getElementById("faHead").innerHTML = "FREE AGENCY";
@@ -1579,12 +1597,7 @@ function generateSummary() {
       }
     }
   }
-  const screenshotTarget = document.getElementById("sMoves");
 
-  html2canvas(screenshotTarget).then((canvas) => {
-    const base64image = canvas.toDataURL("image/png");
-    window.location.href = base64image;
-});
 }
 
 function generateTradeOptions() {
@@ -1680,8 +1693,7 @@ function getPick(team) {
   var qb;
   if (draftPlayers[0].rank <= (draftSummary.length - 15)) {
     return draftPlayers[0];
-  }
-  if (amount > 0) {
+  } else if (amount > 0) {
     for (var i = 0; i < amount; i++) {
       var positionNeed = team.needs[i];
       if (positionNeed == "RB" && draftSummary.length < 20) {
@@ -1712,6 +1724,10 @@ function getPick(team) {
       var rand = Math.floor(Math.random() * (possiblePicks.length - 1));
       var pick = possiblePicks[rand];
     }
+    if (possiblePicks.length === 0) {
+      return draftPlayers[0];
+    }
+    console.log(possiblePicks.length + " " + team.name);
     const index = team.needs.indexOf(pick.pos);
     if (index > -1) {
       team.needs.splice(index, 1);
@@ -1734,7 +1750,9 @@ function draftPlayer(guy) {
   activeRoster.push(guy);
   jetsDrafted.push(guy);
   draftSummary.push([nyj, guy]);
+    window.scrollTo(0, 0);
   startDraft(leftOff);
+    window.scrollTo(0, 0);
 }
 
 function generateBroadFA(kind) {
