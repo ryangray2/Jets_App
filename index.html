@@ -127,6 +127,9 @@
           <div class="col-12">
             <button onclick="makeOffer()" class="bttn-slant bttn-md bttn-success butt">MAKE OFFER</button>
           </div>
+          <div class="col-12">
+            <button onclick="watsonBack()" class="bttn-slant bttn-md bttn-danger butt">BACK</button>
+          </div>
         </div>
         <hr>
       </div>
@@ -145,6 +148,9 @@
         <div class="col-12">
           <button onclick="acceptDarnoldOffer()" class="bttn-slant bttn-md bttn-success butt">ACCEPT</button>
         </div>
+        <div class="col-12">
+          <button onclick="darnoldBack()" class="bttn-slant bttn-md bttn-danger butt">BACK</button>
+        </div>
       </div>
       <div class="container" id="darnoldOffers">
       </div>
@@ -159,7 +165,10 @@
       </div>
       <div class="row text-center">
         <div class="col-12">
-          <button onclick="acceptTwoOffer()" class="bttn-slant bttn-md bttn-success butt">Accept</button>
+          <button onclick="acceptTwoOffer()" class="bttn-slant bttn-md bttn-success butt">ACCEPT</button>
+        </div>
+        <div class="col-12">
+          <button onclick="twoBack()" class="bttn-slant bttn-md bttn-danger butt">BACK</button>
         </div>
       </div>
       <div class="container" id="twoOffers">
@@ -378,8 +387,11 @@
 <div  id="summary" class="slide-in-left2">
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-8 col-md-3">
         <h1 id="summaryHead" class="slide-in-left2">SUMMARY</h1>
+      </div>
+      <div class="col-4 col-md-9">
+        <img id="summaryLogo" src="jetXLogo.png">
       </div>
     </div>
     <div class="row">
