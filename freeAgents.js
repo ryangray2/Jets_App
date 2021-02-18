@@ -70,7 +70,7 @@ interest: 40
 };
 var BudDupree = {
   name: 'Bud Dupree',
-  pos: 'LB',
+  pos: 'EDGE',
   age: '28',
   type: 'UFA',
   cYears: 4,
