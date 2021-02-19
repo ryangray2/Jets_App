@@ -18,6 +18,17 @@
 //   givePlayer: [SamDarnold]
 // }
 
+var CHIpick2021_2 = {
+  name: '2021 Round 2 (CHI)',
+  tradeValue: 40,
+  included: false,
+  thisYear: true,
+  index: [1, 19],
+  order: 15
+};
+
+
+
 var chiOffer1 = {
   team: chi,
   receiveText: ["2021 Round 2 (#52)"],
@@ -25,7 +36,8 @@ var chiOffer1 = {
   receiveIndex: [[1, 19]],
   giveIndex: [[4, 1]],
   receivePlayer: [],
-  givePlayer: [SamDarnold]
+  givePlayer: [SamDarnold],
+  newWatsonAssets: [CHIpick2021_2]
 }
 
 // var chiOffer2 = {
@@ -38,6 +50,17 @@ var chiOffer1 = {
 //   givePlayer: [SamDarnold]
 // }
 
+
+var PITpick2021_2 = {
+  name: '2021 Round 2 (PIT)',
+  tradeValue: 40,
+  included: false,
+  thisYear: true,
+  index: [1, 23],
+  order: 15
+};
+
+
 var pitOffer1 = {
   team: pit,
   receiveText: ["2021 Round 2 (#56)"],
@@ -45,8 +68,34 @@ var pitOffer1 = {
   receiveIndex: [[1, 23]],
   giveIndex: [[5, 14]],
   receivePlayer: [],
-  givePlayer: [SamDarnold]
+  givePlayer: [SamDarnold],
+  newWatsonAssets: [PITpick2021_2]
 }
+
+var PITpick2021_3 = {
+  name: '2021 Round 3 (PIT)',
+  tradeValue: 20,
+  included: false,
+  thisYear: true,
+  index: [2, 22],
+  order: 15
+};
+var PITpick2021_4 = {
+  name: '2021 Round 4 (PIT)',
+  tradeValue: 0,
+  included: false,
+  thisYear: true,
+  index: [3, 23],
+  order: 15
+};
+var PITpick2021_6 = {
+  name: '2021 Round 6 (PIT)',
+  tradeValue: 0,
+  included: false,
+  thisYear: true,
+  index: [5, 22],
+  order: 15
+};
 
 var pitOffer2 = {
   team: pit,
@@ -55,8 +104,18 @@ var pitOffer2 = {
   receiveIndex: [[2, 22], [3, 23], [5, 22]],
   giveIndex: [[5, 14]],
   receivePlayer: [],
-  givePlayer: [SamDarnold]
+  givePlayer: [SamDarnold],
+  newWatsonAssets: [PITpick2021_3, PITpick2021_4, PITpick2021_6]
 }
+
+var NOpick2021_2 = {
+  name: '2021 Round 2 (NO)',
+  tradeValue: 40,
+  included: false,
+  thisYear: true,
+  index: [1, 27],
+  order: 15
+};
 
 var noOffer = {
   team: no,
@@ -65,8 +124,19 @@ var noOffer = {
   receiveIndex: [[1, 27]],
   giveIndex: [],
   receivePlayer: [],
-  givePlayer: [SamDarnold]
+  givePlayer: [SamDarnold],
+  newWatsonAssets: [NOpick2021_2]
 }
+
+
+var SFpick2021_2 = {
+  name: '2021 Round 2 (SF)',
+  tradeValue: 40,
+  included: false,
+  thisYear: true,
+  index: [1, 11],
+  order: 15
+};
 
 var sfOffer = {
   team: sf,
@@ -75,7 +145,8 @@ var sfOffer = {
   receiveIndex: [[1, 11]],
   giveIndex: [[3, 1]],
   receivePlayer: [],
-  givePlayer: [SamDarnold]
+  givePlayer: [SamDarnold],
+  newWatsonAssets: [SFpick2021_2]
 }
 
 darnoldTradeArr = [chiOffer1, pitOffer1, pitOffer2, noOffer, sfOffer];

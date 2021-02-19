@@ -341,6 +341,9 @@ function finishTrade(type) {
     for (var i = 0; i < darnoldTradeArr[darnoldNav].giveText.length; i++) {
       tradedAway.push(darnoldTradeArr[darnoldNav].giveText[i]);
     }
+    for (var i = 0; i < darnoldTradeArr[darnoldNav].newWatsonAssets.length; i++) {
+      watsonTradeAssets.push(darnoldTradeArr[darnoldNav].newWatsonAssets[i]);
+    }
     const index =  watsonTradeAssets.indexOf(SamDarnold);
     watsonTradeAssets.splice(index, 1);
 
