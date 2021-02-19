@@ -6260,7 +6260,7 @@ interest: 35
 };
 var AnthonyWalkerJr = {
   name: 'Anthony Walker Jr.',
-  pos: 'ILB',
+  pos: 'LB',
   age: '26',
   type: 'UFA',
   cYears: 2,
