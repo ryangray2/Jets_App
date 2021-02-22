@@ -975,6 +975,11 @@ function cutPlayer(guy) {
   activeRoster.splice(index, 1);
   updateCapBar(); // fix
   generateRoster();
+  if (broad) {
+      generateBroadFA(currKind);
+  } else {
+    generateTeamFA();
+  }
 }
 
 
