@@ -2015,7 +2015,7 @@ function getCapRoom() {
     cutPenalties += cutArr[i].capPenalty;
   }
   console.log(salaryNum + deadCap);
-  var capRoom = salaryCap - (salaryNum + deadCap + cutPenalties);
+  var capRoom = Math.floor(salaryCap - (salaryNum + deadCap + cutPenalties));
   return capRoom;
 }
 
