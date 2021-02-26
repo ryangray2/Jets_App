@@ -617,7 +617,7 @@ function generateTeamFA() {
 
 function signTeamFA(guy) {
   // alert(guy.name);
-  guy.salary = (guy.cTotal * 1000000) / guy.cYears;
+  guy.salary = Math.floor((guy.cTotal * 1000000) / guy.cYears);
   if (guy.salary <= getCapRoom()){
     console.log(guy.salary);
     activeRoster.push(guy);
@@ -1233,7 +1233,8 @@ function addCommas(num) {
   if (num < 0) {
     neg = true;
   }
-  var str = num.toString();
+  var n = num.toFixed(0);
+  var str = n.toString();
   if (neg) {
     str = str.substr(1);
   }
