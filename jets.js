@@ -28,23 +28,23 @@ function load() {
     var tempArray = [nyj, pit, chi, sf, no, atl, det, car, den, was];
     for (let i = 0; i < tempArray.length; i++) {
       var count = 0;
-      console.log(tempArray[i].name);
+      // console.log(tempArray[i].name);
       for (let j = 0; j < draftOrder.length; j++) {
         for (let k = 0; k < draftOrder[j].length; k++) {
           count += 1;
           if (tempArray[i].name === draftOrder[j][k].name) {
-            console.log("[" + j + ", " + k + "] #" + count);
+            // console.log("[" + j + ", " + k + "] #" + count);
           }
         }
       }
     }
 
-  console.log("players: " + draftPlayers.length);
-  console.log(draftOrder);
+  // console.log("players: " + draftPlayers.length);
+  // console.log(draftOrder);
   divideRoster();
-  console.log(getCapRoom());
+  // console.log(getCapRoom());
   updateCapBar();
-  console.log(broadFA.length);
+  // console.log(broadFA.length);
 
   var posList = [];
   for (i = 0; i < currRosterArr.length; i++) {
@@ -57,7 +57,7 @@ function load() {
       posList.push(broadFA[i].pos);
     }
   }
-  console.log(posList);
+  // console.log(posList);
 }
 
 function startPressed() {
@@ -162,7 +162,7 @@ function generateDarnoldOffers(num) {
 
   var img2 = document.createElement("img");
   img2.setAttribute("src", darnoldTradeArr[num].team.logo);
-  console.log(darnoldTradeArr[num].team.logo)
+  // console.log(darnoldTradeArr[num].team.logo)
   img2.classList.add("tradeLogo");
 
   col1.appendChild(img);
@@ -187,7 +187,7 @@ function generateDarnoldOffers(num) {
 
 function darnoldRight() {
   darnoldNav++;
-  console.log(darnoldNav);
+  // console.log(darnoldNav);
   generateDarnoldOffers(darnoldNav);
 }
 
@@ -255,7 +255,7 @@ function generateTwoOffers(num) {
 
   var img2 = document.createElement("img");
   img2.setAttribute("src", twoTradeArr[num].team.logo);
-  console.log(twoTradeArr[num].team.logo)
+  // console.log(twoTradeArr[num].team.logo)
   img2.classList.add("tradeLogo");
 
   col1.appendChild(img);
@@ -469,7 +469,7 @@ function makeOffer() {
         activeRoster.splice(index, 1);
       }
     }
-    console.log(draftOrder);
+    // console.log(draftOrder);
   } else {
     document.getElementById("resultText").innerHTML = "Rejected";
     document.getElementById("resultImage").setAttribute("src", "watsonTexans.png");
@@ -619,7 +619,7 @@ function signTeamFA(guy) {
   // alert(guy.name);
   guy.salary = Math.floor((guy.cTotal * 1000000) / guy.cYears);
   if (guy.salary <= getCapRoom()){
-    console.log(guy.salary);
+    // console.log(guy.salary);
     activeRoster.push(guy);
     signedArr.push(guy);
     offeredArr.push(guy);
@@ -629,7 +629,7 @@ function signTeamFA(guy) {
     updateCapBar() // fix
     generateTeamFA();
     generateRoster();
-    console.log(activeRoster);
+    // console.log(activeRoster);
   }
 }
 
@@ -652,7 +652,7 @@ function popUp(guy, yes) {
 function signBroadFA(guy) {
   // alert(guy.name);
   guy.salary = Math.floor((guy.cTotal * 1000000) / guy.cYears);
-  console.log(guy.salary);
+
 
   var sal = guy.salary;
   var cap =  getCapRoom();
@@ -661,6 +661,10 @@ function signBroadFA(guy) {
     var num = (Math.floor(Math.random() * 100));
     if (guy.interest >= num) {
       popUp(guy, true);
+      console.log(guy.name);
+      console.log("Salary: " + guy.salary);
+      console.log("Cap Before: " + getCapRoom());
+      console.log("Roster Size Before: " + activeRoster.length);
 
       activeRoster.push(guy);
       signedArr.push(guy);
@@ -668,9 +672,15 @@ function signBroadFA(guy) {
       /// if you want to remove from list entirely
       // const index = teamFA.indexOf(5);
       // teamFA.splice(index, 1);
+
+      console.log("Cap After: " + getCapRoom());
+      console.log("Roster Size After: " + activeRoster.length);
+
       updateCapBar() // fix
       generateBroadFA(currKind);
       generateRoster();
+      console.log("Cap After Generation: " + getCapRoom());
+        console.log("----------------------");
 
     } else {
       popUp(guy, false);
@@ -1288,13 +1298,13 @@ function draftsOver() {
   document.getElementById("draftCont").style.display = "none";
   document.getElementById("summary").style.display = "block";
   generateSummary();
-  console.log("\nSIGNED\n")
+  // console.log("\nSIGNED\n")
   for (var i = 0; i < signedArr.length; i++) {
-    console.log(signedArr[i].name);
+    // console.log(signedArr[i].name);
   }
-  console.log("\nDRAFTED\n")
+  // console.log("\nDRAFTED\n")
   for (var i = 0; i < jetsDrafted.length; i++) {
-    console.log(jetsDrafted[i].name);
+    // console.log(jetsDrafted[i].name);
   }
 }
 
@@ -1640,9 +1650,9 @@ function generateTradeOptions() {
 }
 
 function showDraft() {
-  console.log(draftSummary);
-  console.log(leftOffShow);
-  console.log(showAmount);
+  // console.log(draftSummary);
+  // console.log(leftOffShow);
+  // console.log(showAmount);
   document.getElementById("showDraft").style.display = "block";
   var i = leftOffShow;
   var j = 0;
@@ -1678,7 +1688,7 @@ function startDraft(n) {
         draftOver = true;
       }
       if (k === 0) {
-        console.log("Round " + round);
+        // console.log("Round " + round);
       }
       if (draftOrder[i][k] != nyj) {
         var teamPicking = draftOrder[i][k];
@@ -1689,7 +1699,7 @@ function startDraft(n) {
         if (index > -1) {
           draftPlayers.splice(index, 1);
         }
-        console.log((k + 1) + " " + teamPicking.name + ": " + playerTaken.name)
+        // console.log((k + 1) + " " + teamPicking.name + ": " + playerTaken.name)
       } else {
         generateDraftPool("fifty");
         ///////////////// change
@@ -1759,7 +1769,7 @@ function getPick(team) {
     if (possiblePicks.length === 0) {
       return draftPlayers[0];
     }
-    console.log(possiblePicks.length + " " + team.name);
+    // console.log(possiblePicks.length + " " + team.name);
     const index = team.needs.indexOf(pick.pos);
     if (index > -1) {
       team.needs.splice(index, 1);
@@ -1778,7 +1788,7 @@ function draftPlayer(guy) {
   if (index > -1) {
     draftPlayers.splice(index, 1);
   }
-  console.log(" Jets: " + guy.name);
+  // console.log(" Jets: " + guy.name);
   activeRoster.push(guy);
   jetsDrafted.push(guy);
   draftSummary.push([nyj, guy]);
@@ -1979,7 +1989,7 @@ function generateBroadFA(kind) {
     if (offeredArr.includes(tempArray[i])) {
       row.style.opacity = ".5";
     }
-    var sal = broadFA[i].salary = (tempArray[i].cTotal * 1000000) / tempArray[i].cYears;
+    var sal = (tempArray[i].cTotal * 1000000) / tempArray[i].cYears;
     if (getCapRoom() - sal < 0) {
       row.style.opacity = ".5";
     }
@@ -2010,12 +2020,12 @@ function getSalaryHit() {
 
 function getCapRoom() {
   var salaryNum = getSalaryHit();
-  console.log(salaryNum);
+  // console.log(salaryNum);
   var cutPenalties = 0;
   for (let i = 0; i < cutArr.length; i++) {
     cutPenalties += cutArr[i].capPenalty;
   }
-  console.log(salaryNum + deadCap);
+  // console.log(salaryNum + deadCap);
   var capRoom = Math.floor(salaryCap - (salaryNum + deadCap + cutPenalties));
   return capRoom;
 }
@@ -2031,7 +2041,7 @@ function countPlayers() {
   var count = 0;
   for (let i = 0; i < currRosterArr.length; i++) {
     if (currRosterArr[i].salary != 0) {
-      console.log(currRosterArr[i].name + ": " + currRosterArr[i].salary);
+      // console.log(currRosterArr[i].name + ": " + currRosterArr[i].salary);
       count++;
     }
   }
