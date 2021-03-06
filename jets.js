@@ -25,6 +25,10 @@ var currKind = "all";
 
 function load() {
 
+    for (let i = 0; i < draftPlayers.length; i++) {
+      draftPlayers[i].rank = i + 1;
+    }
+
     var tempArray = [nyj, pit, chi, sf, no, atl, det, car, den, was];
     for (let i = 0; i < tempArray.length; i++) {
       var count = 0;
@@ -1733,6 +1737,9 @@ function getPick(team) {
   var amount = team.needs.length;
   var possiblePicks = [];
   var qb;
+  if (draftPlayers[0].rank <= (draftSummary.length - 5) && draftSummary.length < 30) {
+    return draftPlayers[0];
+  }
   if (draftPlayers[0].rank <= (draftSummary.length - 15)) {
     return draftPlayers[0];
   } else if (amount > 0) {
@@ -1820,6 +1827,16 @@ function generateBroadFA(kind) {
       }
       amount = tempArray.length;
     }
+    else if (kind === "FB") {
+        var count = 0;
+        while (count < amount) {
+          if (broadFA[count].pos === "FB") {
+            tempArray.push(broadFA[count]);
+          }
+          count++;
+        }
+        amount = tempArray.length;
+      }
     else if (kind === "WR") {
        var count = 0;
        while (count < amount) {

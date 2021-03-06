@@ -163,7 +163,7 @@ var den = {
   name: "Broncos",
   logo: "https://res.cloudinary.com/nflleague/image/private/f_auto/league/t0p7m5cjdjy18rnzzqbx",
   draftResults: [],
-  needs: ["CB", "EDGE", "LB", "QB"]
+  needs: ["CB", "EDGE", "LB", "QB", "TE"]
 };
 
 var hou = {
