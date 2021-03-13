@@ -24,7 +24,7 @@ var broad = false;
 var currKind = "all";
 
 function load() {
-
+    loadPicks();
     for (let i = 0; i < draftPlayers.length; i++) {
       draftPlayers[i].rank = i + 1;
     }
@@ -62,6 +62,15 @@ function load() {
     }
   }
   // console.log(posList);
+}
+
+function loadPicks() {
+  for (let i = 0; i < draftOrder.length; i++) {
+    for (let j = 0; j < draftOrder[i].length; j++) {
+      var temp = [i, j];
+      draftOrder[i][j].picks.push(temp);
+    }
+  }
 }
 
 function startPressed() {
@@ -1737,7 +1746,7 @@ function getPick(team) {
   var amount = team.needs.length;
   var possiblePicks = [];
   var qb;
-  if (draftPlayers[0].rank <= (draftSummary.length - 5) && draftSummary.length < 30) {
+  if (draftPlayers[0].rank <= (draftSummary.length - 2) && draftSummary.length < 23) {
     return draftPlayers[0];
   }
   if (draftPlayers[0].rank <= (draftSummary.length - 15)) {

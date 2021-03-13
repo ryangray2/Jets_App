@@ -515,10 +515,9 @@ var MarcusMaye = {
   age: '27',
   height: '6-0',
   weight: '207',
-  salary: 0,
+  salary: 10612000,
   img: 'https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/2980110.png',
-  cYears: 4,
-  cTotal: 50
+  capPenalty: 10500000	
 };
 var ConorMcDermott = {
   name: 'Conor McDermott',
