@@ -289,10 +289,10 @@ var ten = {
 
 var draftOrder = [
   [jax, nyj, mia, atl, cin, phi, det, car, den, dal, nyg, sf, lac, min, ne, az, lv, mia, was, chi, ind, ten, nyj, pit, jax, cle, bal, no, gb, buf, kc, tb],
-  [jax, nyj, mia, atl, cin, phi, det, car, den, dal, nyg, sf, lac, jax, ne, az, lv, mia, was, chi, ind, ten, sea, pit, lar, cle, bal, no, gb, buf, kc, tb],
-  [jax, nyj, hou, atl, cin, phi, det, car, den, dal, nyg, was, lac, min, az, lv, mia, was, chi, phi, ten, nyj, pit, det, cle, min, cle, gb, buf, kc, tb, ne, lac, no, dal, ten, lar, sf, lar, bal, no],
-  [jax, nyj, hou, atl, cin, cle, det, car, den, dal, nyg, sf, lac, min, ne, hou, lv, mia, was, min, ind, ten, sea, pit, jax, cle, bal, no, gb, min, kc, tb, ne, dal, lar, pit, gb, min, kc, ne],
-  [jax, nyj, hou, atl, cin, phi, det, car, den, phi, nyj, sf, lac, min, ne, az, buf, lv, was, chi, ind, ten, sea, bal, cle, jax, min, sf, gb, buf, kc, tb, gb, dal, kc, atl, sf, atl, bal, car, tb],
-  [ten, ne, hou, atl, cin, phi, dal, car, den, ne, nyg, sf, lac, min, nyj, nyg, mia, hou, chi, ind, lac, mia, pit, lar, cle, bal, hou, gb, buf, ten, kc, atl, chi, phi, gb, min],
-  [jax, sf, hou, atl, cin, phi, sea, car, den, dal, den, sf, lac, min, ne, az, was, pit, was, lv, ind, jax, cin, tb, lar, cle, pit, gb, den, mia, tb]
+  [jax, nyj, atl, mia, phi, cin, car, den, det, nyg, sf, dal, jax, ne, lac, lv, az, mia, was, chi, ten, ind, pit, sea, lar, bal, cle, no,  buf, gb, kc, tb],
+  [jax, nyj, hou, atl, cin, phi, den, det, car, was, dal, nyg, lac, min, az, oak, mia, was, chi, phi, ten, nyj, pit, det, cle, min, cle, gb, buf, kc, tb, ne, lac, no, dal, ten, lar, sf, lar, bal, no],
+  [jax, nyj, atl, hou, cle, cin, det, car, den, dal, nyg, sf, lac, min, ne, oak, hou, mia, was, min, ten, ind, pit, sea, jax, bal, cle, no, min, gb, kc, tb, dal, ne, pit, lar, gb, min, kc],
+  [jax, nyj, hou, atl, cin, phi, car, den, det, nyj, sf, phi, min, ne, lac, az, buf, oak, was, chi, ind, ten, sea, bal, cle, jax, min, sf, gb, buf, kc, tb, gb, dal, atl, sf, kc, atl, bal],
+  [ten, ne, atl, hou, phi, cin, den, dal, car, sf, ne, nyg, nyj, lac, min, nyg, hou, oak, chi, lac, ind, mia, sea, lar, bal, cle, hou, buf, gb, ten, pit, tb, no, atl, gb, chi, car, min, phi, phi, car, dal, chi],
+  [jax, sf, hou, chi, cin, phi, cin, buf, den, dal, den, sf, lac, min, ne, az, was, pit, was, oak, ind, jax, nyj, tb, lar, den, pit, ten, gb, cle]
 ];
