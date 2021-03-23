@@ -414,7 +414,18 @@ color: black;
   height: 100%;
   width: 100%;
     background-color: #125740;
-    background-image: url("watsonTradeBG copy.jpg");
+    /* background-image: url("watsonTradeBG copy.jpg"); */
+    background-position: right;
+    background-size: cover;
+}
+#wilsonTradeAssets {
+  display: none;
+  z-index: 201;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #125740;
+    /* background-image: url("watsonTradeBG copy.jpg"); */
     background-position: right;
     background-size: cover;
 }

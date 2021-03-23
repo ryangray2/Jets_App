@@ -1113,3 +1113,14 @@ var DeshaunWatson = {
     img: '',
     capPenalty: 748026
 };
+
+var RussellWilson = {
+    name: "Russell Wilson",
+    pos: 'QB',
+    age: '32',
+    height: '5-11',
+    weight: '215',
+    salary: 32000000,
+    img: '',
+    capPenalty: 58000000
+};

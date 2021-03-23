@@ -95,6 +95,13 @@ function yesWatson() {
   generateWatsonAssets();
 }
 
+function yesWilson() {
+  document.getElementById("tradePrompt").style.display = "none";
+
+  document.getElementById("wilsonTradeAssets").style.display = "block";
+  generateWilsonAssets();
+}
+
 function yesDarnold() {
   document.getElementById("tradePrompt").style.display = "none";
   document.getElementById("darnoldTradeOffers").style.display = "block";
@@ -308,6 +315,7 @@ function skipTrade() {
   document.getElementById("faCont").style.display = "block";
   // document.getElementById("tradePrompt").style.display = "none";
       document.getElementById("watsonTrade").style.display = "none";
+          document.getElementById("wilsonTrade").style.display = "none";
             document.getElementById("twoTrade").style.display = "none";
                   document.getElementById("darnoldTrade").style.display = "none";
 
@@ -332,6 +340,7 @@ function finishTrade(type) {
     else {
       document.getElementById("tradePrompt").style.display = "block";
       document.getElementById("watsonTrade").style.display = "none";
+      document.getElementById("wilsonTrade").style.display = "none";
       document.getElementById("twoTrade").style.display = "none";
       document.getElementById("watsonResult").style.display = "none";
     }
@@ -384,6 +393,7 @@ function finishTrade(type) {
     document.getElementById("tradePrompt").style.display = "block";
     document.getElementById("twoTrade").style.display = "none";
     document.getElementById("watsonTrade").style.display = "none";
+    document.getElementById("wilsonTrade").style.display = "none";
     document.getElementById("twoTradeOffers").style.display = "none";
   }
 }
@@ -427,6 +437,33 @@ function generateWatsonAssets() {
   }
 }
 
+function generateWilsonAssets() {
+  var root = document.getElementById("wilsonassets");
+  while (root.firstChild) {
+    root.removeChild(root.firstChild);
+  }
+  for (let i = 0; i < watsonTradeAssets.length; i++) {
+    var row = document.createElement("div");
+    row.classList.add("row", "watsonAssetRow");
+
+
+    var nameCol = document.createElement("div");
+    nameCol.classList.add("col-12", "col-md-8", "assetCol");
+    nameCol.setAttribute("id", watsonTradeAssets[i].name.replace(/\s+/g, ''));
+    nameCol.addEventListener('click', function() {
+      addAsset(watsonTradeAssets[i]);
+    });
+
+    var nameP = document.createElement("p");
+    nameP.innerHTML = watsonTradeAssets[i].name;
+
+    nameCol.appendChild(nameP);
+    row.appendChild(nameCol);
+    root.appendChild(row);
+  }
+}
+
+
 function addAsset(thing) {
   if (thing.included === false) {
     assetsOffered.push(thing);
@@ -458,6 +495,7 @@ function twoBack() {
 function makeOffer() {
   var accepted = checkTradeValue();
   document.getElementById("watsonTradeAssets").style.display = "none";
+
   document.getElementById("watsonResult").style.display = "block";
   if (accepted) {
     document.getElementById("resultText").innerHTML = "Accepted";
@@ -488,6 +526,41 @@ function makeOffer() {
     document.getElementById("resultImage").setAttribute("src", "watsonTexans.png");
   }
 }
+
+function makeWilsonOffer() {
+  var accepted = checkTradeValue();
+  document.getElementById("wilsonTradeAssets").style.display = "none";
+  document.getElementById("watsonResult").style.display = "block";
+  if (accepted) {
+    document.getElementById("resultText").innerHTML = "Accepted";
+    // document.getElementById("resultImage").setAttribute("src", "watsonJets.png");
+    activeRoster.push(RussellWilson);
+    tradedFor.push(RussellWilson.name);
+    for (var i = 0; i < assetsOffered.length; i++) {
+      tradedAway.push(assetsOffered[i].name);
+      if (assetsOffered[i].thisYear === true) {
+        draftOrder[assetsOffered[i].index[0]][assetsOffered[i].index[1]] = hou;
+      }
+      if (assetsOffered[i] === SamDarnold) {
+        const index = activeRoster.indexOf(SamDarnold);
+        activeRoster.splice(index, 1);
+      }
+      if (assetsOffered[i] === QuinnenWilliams) {
+        const index = activeRoster.indexOf(QuinnenWilliams);
+        activeRoster.splice(index, 1);
+      }
+      if (assetsOffered[i] === MekhiBecton) {
+        const index = activeRoster.indexOf(MekhiBecton);
+        activeRoster.splice(index, 1);
+      }
+    }
+    // console.log(draftOrder);
+  } else {
+    document.getElementById("resultText").innerHTML = "Rejected";
+    // document.getElementById("resultImage").setAttribute("src", "watsonTexans.png");
+  }
+}
+
 
 
 function checkTradeValue() {
