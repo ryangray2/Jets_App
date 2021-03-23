@@ -201,4 +201,4 @@ var wasOffer = {
   givePlayer: []
 }
 
-twoTradeArr = [atlOffer, detOffer, carOffer, denOffer, wasOffer]
+twoTradeArr = [atlOffer, carOffer, denOffer, wasOffer]
