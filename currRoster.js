@@ -683,7 +683,7 @@ var JeffSmith = {
   img: 'https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/3929118.png',
   cYears: 1,
   cTotal: .75,
-  capPenalty: 0
+  capPenalty: 1
 };
 var CoreyDavis = {
   name: 'Corey Davis',
@@ -707,7 +707,7 @@ var KeelanCole = {
   img: '',
   salary: 1,
 interest: 0,
-capPenalty: 0
+capPenalty: 1
 };
 var TylerKroft = {
   name: 'Tyler Kroft',
@@ -767,7 +767,7 @@ var SheldonRankins = {
   img: '',
 interest: 40,
   salary: 1,
-  capPenalty: 0
+  capPenalty: 1
 };
 var CarlLawson = {
   name: 'Carl Lawson',
@@ -812,7 +812,7 @@ var VyncintSmith = {
   age: '24',
   height: '6-3',
   weight: '202',
-  salary: 1,
+  salary: 885000,
   img: 'https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/3155188.png',
   cYears: 1,
   cTotal: .75,
@@ -926,7 +926,7 @@ var ManassehBailey = {
   img: 'https://a.espncdn.com/combiner/i?img=/i/headshots/nfl/players/full/3125705.png',
   cYears: 1,
   cTotal: .99,
-  capPenalty: 660000
+  capPenalty: 0
 };
 var ShariffFinch = {
   name: 'Shariff Finch',
@@ -971,7 +971,7 @@ var currRosterArr = [JoshAdams, JoshAndrews, BlessuanAustin, ManassehBailey, Cor
 var deadCap = 15677075;
 var rollover = 26686546;
 // var salaryCap = 211686546;
-var salaryCap = 211686546 + 8032258;
+var salaryCap = 211686546 + 8032258 + 884999;
 
 // 150
 var pick2021_1 = {
