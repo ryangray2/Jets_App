@@ -929,7 +929,7 @@ var ManassehBailey = {
   capPenalty: 660000
 };
 var ShariffFinch = {
-  name: 'ShariffFinch',
+  name: 'Shariff Finch',
   pos: 'EDGE',
   age: '25',
   height: '6-1',
@@ -941,7 +941,7 @@ var ShariffFinch = {
   capPenalty: 0
 };
 var TanzelSmart = {
-  name: 'ShariffFinch',
+  name: 'Tanzel Smart',
   pos: 'IDL',
   age: '26',
   height: '6-1',
