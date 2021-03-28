@@ -1,0 +1,626 @@
+body {
+  background: #125740;
+  color: #cfecfe;
+  -webkit-touch-callout: none; /* iOS Safari */
+   -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+       -ms-user-select: none; /* Internet Explorer/Edge */
+           user-select: none; /* Non-prefixed version, currently
+                                 supported by Chrome, Edge, Opera and Firefox */
+
+}
+
+/* // #046a38 */
+
+.butt {
+  font-family: "Coda Caption" !important;
+  outline: none;
+box-shadow: none;
+margin-bottom: 5px;
+}
+
+button {
+   outline: none !important;
+}
+
+p {
+  font-family: "Abel";
+}
+
+h5 {
+  font-family: "Abel";
+}
+
+.transition {
+  position: absolute;
+  background-color: #27251f;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  display: none;
+  background-size: cover;
+  background-position: center;
+}
+
+#trans1 {
+  background-image: url("namathBG copy.jpg");
+}
+
+#trans2 {
+  background-image: url("revisBG.png");
+}
+
+#trans3 {
+  background-image: url("markBG.jpg");
+  z-index: 300;
+}
+
+#green {
+  background-color: #125740;
+  z-index: 301;
+  height: 100%;
+  width: 100%;
+}
+
+.myauto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+#draftPoolHeader {
+
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+#pickHistoryHeader {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  display: none;
+}
+
+#trans4 {
+  background-image: url("curtisBG.jpg");
+  z-index: 302;
+}
+
+#capSpaceText {
+  background-color: #27251f;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 4vh;
+}
+
+#capBar {
+
+}
+
+#resultImage {
+  height: 37vh;
+    margin-bottom: 5px;
+}
+
+#enterButt {
+  margin: 10px;
+}
+
+#fixHead {
+  color: #cfecfe;
+  font-family: "Big Shoulders Inline Display";
+  font-size: 12vw;
+}
+
+#summaryHead {
+  color: #cfecfe;
+  font-family: "Big Shoulders Inline Display";
+  font-size: 8vh;
+}
+
+#dealHead {
+  color: #cfecfe;
+  font-family: "Big Shoulders Inline Display";
+  font-size: 12vw;
+}
+
+#faHead {
+  color: #cfecfe;
+  font-family: "Big Shoulders Inline Display";
+  font-size: 8vh;
+}
+
+.watsonAssetRow {
+  font-family: "Coda Caption" !important;
+  font-size: 3vh;
+
+      margin-bottom: 5px;
+}
+
+.assetCol {
+  border: 3px solid #098d4c;
+  border-collapse: collapse;
+}
+
+.assetCol:hover {
+   cursor: pointer;
+}
+
+.assetNav {
+  /* position: fixed; */
+}
+
+#resultText {
+  font-size: 7vh;
+  font-family: "Lexend Mega";
+}
+
+#logo {
+  width: 42vh;
+  max-width: 100%;
+}
+
+#instCont {
+  display: none;
+  z-index: 200;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #125740;
+}
+
+#faCont {
+  display: none;
+  z-index: 301;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #125740;
+    background-position: right;
+    background-size: cover;
+}
+#rosterNavCont {
+  /* background-color: lightgreen; */
+  height: 100%;
+  width: 100%;
+  display: none;
+  background-color: #11411e;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+#signPop {
+  display: none;
+      /* transform: translateY(-100%); */
+      /* height: 11vh; */
+      padding: 4vh;
+      font-size: 1em;
+      position: absolute;
+      width: 68vw;
+      top: -70vh;
+      border-bottom: 5px solid #28b78d;
+      background-color: #11411e;
+      z-index: 100000;
+      border-top-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+}
+
+#dropdownMenuButton {
+    font-family: "Coda Caption" !important;
+}
+
+.dropdown-item {
+  font-family: "Anton" !important;
+}
+
+#faNavCont {
+  /* background-color: lightblue; */
+  height: 70vh;
+  overflow: scroll;
+  width: 100%;
+  background-color: #cfecfe;
+border-radius: 20px;
+padding-top: 10px;
+color: black;
+}
+
+#broadSort {
+  display: none;
+}
+
+#summary {
+  display: none;
+  z-index: 200;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #125740;
+    /* background-image: url("jetXlogofade.png"); */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#summaryLogo {
+  height: 9vh;
+}
+
+.sumAddDrop {
+  font-size: 4vh;
+      font-family: 'Anton';
+      font-style: italic;
+      margin-bottom: 0px;
+}
+
+.sumP {
+  font-size: 1.5vh;
+}
+
+#twitter {
+  color: #00ACEE;
+  font-size: 5vh;
+}
+
+#facebook {
+  color: #3B5998;
+  font-size: 5vh;
+}
+
+#share {
+  background-color: #cfebfd;
+      border-radius: 49px;
+      border: 3px solid #29b68c;
+      padding: 20px;
+      margin-top: 15px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+}
+
+#ryangray {
+  margin-top: 5px;
+  font-family: "Coda Caption";
+  font-style: italic;
+  color: white !important;
+  font-size: 2vh;
+}
+
+#screenshot {
+  font-size: 3vh;
+      font-family: "Coda Caption";
+      margin-top: 10px;
+      color: #145841;
+}
+
+#screenshot2 {
+  font-size: 2vh;
+      font-family: "Coda Caption";
+      margin-top: 10px;
+      color: #145841;
+}
+
+#sCap {
+  font-size: 2vh;
+}
+
+#sRoster {
+  display: none;
+}
+
+
+.faImg {
+  width: 35vh;
+  border-radius: 200px;
+}
+
+.faName {
+  font-family: "Anton";
+  font-size: 50px;
+  color: #125740 !important;
+  font-style:italic;
+  margin-bottom: 1px;
+}
+
+.faPos {
+  font-family: "Lexend Mega";
+  margin-bottom: 1px;
+}
+
+.rosterCut {
+  color: #ca5656;
+}
+
+.faPrice {
+  font-family: "Lexend Mega";
+}
+
+#draftCont {
+  display: none;
+  background-color:  #27251f;
+  height: 100%;
+}
+
+#draftStartScreen {
+  display: none;
+  z-index: 300;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color:  #27251f;
+}
+
+#showDraft {
+  display: none;
+  z-index: 500;
+  position: absolute;
+  height: 200%;
+  width: 100%;
+  background-color: #27251f;
+}
+
+.draftName {
+
+}
+
+.nflDraftLogo1 {
+  width: 30vh;
+}
+
+.nflDraftLogo {
+  width: 20vh;
+
+}
+
+.draftLogo {
+  width: 15vh;
+  margin-top: -30px;
+}
+
+#draftPoolCont {
+  height: 70vh;
+  overflow: scroll;
+  background-color: #3c3935;
+}
+
+#pickHistoryCont {
+  display: none;
+  height: 70vh;
+  overflow: scroll;
+  background-color: #3c3935;
+}
+
+.phLogo {
+  width: 100%;
+}
+
+#showPick {
+    font-family: "Anton";
+    font-size: 4vh;
+      font-style:italic;
+}
+
+#tradePrompt {
+  display: none;
+  z-index: 200;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #125740;
+}
+#watsonTradeAssets {
+  display: none;
+  z-index: 201;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #125740;
+    /* background-image: url("watsonTradeBG copy.jpg"); */
+    background-position: right;
+    background-size: cover;
+}
+#wilsonTradeAssets {
+  display: none;
+  z-index: 201;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #125740;
+    /* background-image: url("watsonTradeBG copy.jpg"); */
+    background-position: right;
+    background-size: cover;
+}
+
+
+#assets {
+  height: 77vh;
+overflow: scroll;
+}
+
+.tradeLogo {
+  width: 70%;
+  max-width: 150px;
+  /* background-color: black; */
+  background-image: url("tradeLogoBG.png");
+  background-size: cover;
+  -webkit-box-shadow: 5px 5px 0px 3px rgba(0,0,0,0.64);
+box-shadow: 5px 5px 0px 3px rgba(0,0,0,0.64);
+margin-bottom: 10px;
+border-radius: 20px;
+}
+
+
+
+#watsonResult {
+  display: none;
+  z-index: 201;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #125740;
+    background-position: right;
+    background-size: cover;
+}
+#darnoldTradeOffers {
+  display: none;
+  z-index: 201;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #125740;
+    background-position: right;
+    background-size: cover;
+}
+#twoTradeOffers {
+  display: none;
+  z-index: 201;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+    background-color: #125740;
+    background-position: right;
+    background-size: cover;
+}
+
+.tradePromptImg {
+  width: 90%;
+margin-bottom: 10px;
+
+  /* object-fit: cover;
+width: 100%;
+height: 150px; */
+
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+border-radius: 5px;
+-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.tradePromptImg::after {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+opacity: 0;
+-webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.tradePromptImg:hover {
+  -webkit-transform: scale(1.25, 1.25);
+ transform: scale(1.15, 1.15);
+ cursor: pointer;
+}
+
+.tradePromptImg:hover::after {
+    opacity: 1;
+}
+
+#tradeButton {
+  margin-bottom: 0;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #28b78d;
+  margin-top: 3px;
+  font-family: "Coda Caption";
+    cursor: pointer;
+}
+#pickOfferButton {
+  display: none;
+  margin-bottom: 0;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #28b78d;
+  margin-top: 3px;
+  font-family: "Coda Caption";
+  cursor: pointer;
+}
+
+.pickResult {
+  font-size: 4vh;
+  font-family: "Coda Caption";
+  padding: 10px;
+}
+
+#pickTradeTeamsCont {
+  display: none;
+}
+
+.pickTeam {
+  background-color: #3c3935;
+  border-bottom: 1px solid rgb(40, 37, 32);
+  cursor: pointer;
+}
+
+.teamPick {
+  margin-bottom: 0px;
+  padding: 5px;
+  background-color: #3c3935;
+  border-bottom: 1px solid rgb(40, 37, 32);
+    cursor: pointer;
+}
+
+///////////////////////////////
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+
+
+/////////////////////////////
+/* ----------------------------------------------
+ * Generated by Animista on 2021-1-30 14:24:15
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info.
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+@-webkit-keyframes scale-in-center{0%{-webkit-transform:scale(0);transform:scale(0);opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);opacity:1}}@keyframes scale-in-center{0%{-webkit-transform:scale(0);transform:scale(0);opacity:1}100%{-webkit-transform:scale(1);transform:scale(1);opacity:1}}
+
+.scale-in-center{-webkit-animation:scale-in-center .5s cubic-bezier(.25,.46,.45,.94) both;animation:scale-in-center .5s cubic-bezier(.25,.46,.45,.94) both}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-1-30 14:25:30
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info.
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+@-webkit-keyframes slide-in-bck-center{0%{-webkit-transform:translateZ(600px);transform:translateZ(600px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes slide-in-bck-center{0%{-webkit-transform:translateZ(600px);transform:translateZ(600px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
+
+.slide-in-bck-center{-webkit-animation:slide-in-bck-center .7s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-bck-center .7s cubic-bezier(.25,.46,.45,.94) both}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2021-1-30 17:43:29
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info.
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+@-webkit-keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);}100%{-webkit-transform:translateX(0);transform:translateX(0);}}@keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);}100%{-webkit-transform:translateX(0);transform:translateX(0);}}
+
+@-webkit-keyframes slide-in-left2{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-left2{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}
+
+.slide-in-left{-webkit-animation:slide-in-left .7s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-left .7s cubic-bezier(.25,.46,.45,.94) both;}
+
+.slide-in-left2{-webkit-animation:slide-in-left2 1.0s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-left2 1.0s cubic-bezier(.25,.46,.45,.94) both; animation-delay: .4s}
