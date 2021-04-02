@@ -24,9 +24,19 @@ var broad = false;
 var currKind = "all";
 
 function load() {
-    loadPicks();
+    var tempArr = [leftOff[0], leftOff[1]];
+    loadPicks(tempArr);
     for (let i = 0; i < draftPlayers.length; i++) {
       draftPlayers[i].rank = i + 1;
+    }
+    var place = 0;
+    for (let i = 0; i < draftOrder.length; i++) {
+      for (let j = 0; j < draftOrder[i].length; j++) {
+        place += 1;
+        if (draftOrder[i][j].name === nyj.name) {
+          console.log('#' + place);
+        }
+      }
     }
 
     var tempArray = [nyj, pit, chi, sf, no, atl, det, car, den, was];
@@ -64,10 +74,24 @@ function load() {
   // console.log(posList);
 }
 
-function loadPicks() {
-  for (let i = 0; i < draftOrder.length; i++) {
-    for (let j = 0; j < draftOrder[i].length; j++) {
+function loadPicks(start) {
+  console.log(start);
+  for (let m = 0; m < teams.length; m++) {
+    teams[m].picks = [];
+  }
+  nyj.picks = [];
+  // var jay = start[1];
+  // if (start[1] > 0) {
+  //   jay -= 1;
+  // }
+  var startstart = start[0];
+  for (let i = start[0]; i < draftOrder.length; i++) {
+    if (i > startstart) {
+      start[1] = 0;
+    }
+    for (let j = start[1]; j < draftOrder[i].length; j++) {
       var temp = [i, j];
+      // console.log(draftOrder[i][j].name + " " + i + ", " + j);
       draftOrder[i][j].picks.push(temp);
     }
   }
@@ -1748,6 +1772,7 @@ function showDraft() {
        if (i == showAmount - 1) {
           document.getElementById("showDraft").style.display = "none";
        } else {
+         console.log(draftSummary);
          document.getElementById("showLogo").setAttribute("src", draftSummary[i][0].logo);
          document.getElementById("showPick").innerHTML = draftSummary[i][1].pos + " - " + draftSummary[i][1].name;
        }
@@ -1841,9 +1866,22 @@ function getPick(team) {
       }
     }
 
-    if (draftSummary.length < 2) {
+    if (draftSummary.length < 1) {
       var pick = draftPlayers[0];
-    } else {
+      // var index2;
+      // for (var  i = 0 ; i < draftPlayers.length; i++) {
+      //   if (draftPlayers[i].name == "Zach Wilson") {
+      //     index2 = i;
+      //     break;
+      //   }
+      // }
+      // console.log(index2);
+      // var pick = draftPlayers[index2];
+    }
+    else if (draftSummary.length < 2) {
+      var pick = ZachWilson;
+    }
+    else {
       if (draftSummary.length < 15 && team.needs.includes("QB")) {
         possiblePicks.push(qb);
         possiblePicks.push(qb);
@@ -2162,4 +2200,250 @@ function rosterNav() {
     document.getElementById("broadSort").style.display = "none";
   }
   document.getElementById("rosterNavCont").style.display = "block";
+}
+
+
+
+
+///// Draft Pick Trading
+
+var pickTradeOn = false;
+var picksSend = [];
+var picksGet = [];
+var currTeam;
+var currPickTrade = false;
+
+function pickTradeScreen() {
+  if (pickTradeOn === false) {
+    pickTradeOn = true;
+  } else {
+    pickTradeOn = false;
+  }
+  var draftPool = document.getElementById("draftPool");
+  var draftPoolCont = document.getElementById("draftPoolCont");
+  var tradeButton = document.getElementById("tradeButton");
+  var pickTradeTeamsCont = document.getElementById("pickTradeTeamsCont");
+  if (pickTradeOn === true) {
+    draftPool.style.display = "none";
+    draftPoolCont.style.display = "none";
+    pickTradeTeamsCont.style.display = "block";
+    tradeButton.innerHTML = "BACK";
+    tradeButton.style.backgroundColor = "darkred";
+    generateTeams();
+  } else {
+    draftPool.style.display = "block";
+    draftPoolCont.style.display = "block";
+    pickTradeTeamsCont.style.display = "none";
+    tradeButton.innerHTML = "TRADE";
+    tradeButton.style.backgroundColor = "#28b78d";
+    // leftOff = [leftOff[0], (leftOff[1] - 1)];
+    // if (currPickTrade) {
+    //   startDraft(leftOff);
+    // }
+  }
+}
+
+function generateTeams() {
+  var root = document.getElementById("pickTradeTeamsCont");
+  while (root.firstChild) {
+    root.removeChild(root.firstChild);
+  }
+  for (let i = 0; i < teams.length; i++) {
+    var row = document.createElement("div");
+    row.classList.add("row", "text-center", "pickTeam");
+
+
+    var col = document.createElement("div");
+    col.classList.add("col-12");
+    col.addEventListener('click', function() {
+      generateTeamPicks(teams[i]);
+    });
+
+    var p = document.createElement("p");
+    p.innerHTML = teams[i].name;
+    p.style.marginBottom = "0px";
+    p.style.padding = "5px";
+
+    col.appendChild(p);
+    row.appendChild(col);
+    root.appendChild(row);
+  }
+}
+
+function generateTeamPicks(team) {
+  currTeam = team;
+  var tempArr = [leftOff[0], leftOff[1]];
+  loadPicks(tempArr);
+  var root = document.getElementById("pickTradeTeamsCont");
+  while (root.firstChild) {
+    root.removeChild(root.firstChild);
+  }
+  var row = document.createElement("div");
+  row.classList.add("row", "text-center");
+
+  var col1 = document.createElement("div");
+  col1.classList.add("col-6");
+
+  var col2 = document.createElement("div");
+  col2.classList.add("col-6");
+
+  var img = document.createElement("img");
+  img.setAttribute("src", nyj.logo);
+  img.classList.add("tradeLogo");
+
+  var img2 = document.createElement("img");
+  img2.setAttribute("src", team.logo);
+  img2.classList.add("tradeLogo");
+
+  col1.appendChild(img);
+  col2.appendChild(img2);
+
+  for (let k = 0; k < nyj.picks.length; k++) {
+    var p = document.createElement("p");
+    p.classList.add("teamPick");
+    var round = nyj.picks[k][0] + 1;
+    var pick = nyj.picks[k][1] + 1;
+    p.innerHTML =  "R" + round + " P" + pick;
+    p.setAttribute("id", "r" + nyj.picks[k][0] + "p" + nyj.picks[k][1])
+    p.addEventListener('click', function() {
+      addSend(nyj.picks[k]);
+    });
+    col1.appendChild(p);
+  }
+  for (let j = 0; j < team.picks.length; j++) {
+    var p = document.createElement("p");
+    p.classList.add("teamPick");
+    var round = team.picks[j][0] + 1;
+    var pick = team.picks[j][1] + 1;
+    p.innerHTML =  "R" + round + " P" + pick;
+    p.setAttribute("id", "r" + team.picks[j][0] + "p" + team.picks[j][1])
+    p.addEventListener('click', function() {
+      addGet(team.picks[j]);
+    });
+    col2.appendChild(p);
+  }
+  row.appendChild(col1);
+  row.appendChild(col2);
+  root.appendChild(row);
+}
+
+function addSend(pick) {
+  var p = document.getElementById("r" + pick[0] + "p" + pick[1]);
+  console.log(p.style.backgroundColor);
+
+  if (p.classList.contains("checked")) {
+    p.style.backgroundColor = "#3c3935";
+    p.classList.remove("checked");
+    const index =  picksSend.indexOf(pick);
+    picksSend.splice(index, 1);
+    console.log(picksSend);
+  } else {
+    console.log("not ok");
+    p.style.backgroundColor = "#28b78d";
+    p.classList.add("checked");
+    picksSend.push(pick);
+    console.log(picksSend);
+  }
+
+  if (picksSend.length > 0 && picksGet.length > 0) {
+    document.getElementById("pickOfferButton").style.display = "block";
+  } else {
+    document.getElementById("pickOfferButton").style.display = "none";
+  }
+}
+
+function addGet(pick) {
+  var p = document.getElementById("r" + pick[0] + "p" + pick[1]);
+
+  if (p.classList.contains("checked")) {
+    p.style.backgroundColor = "#3c3935";
+    p.classList.remove("checked");
+    const index =  picksGet.indexOf(pick);
+    picksGet.splice(index, 1);
+    console.log(picksGet);
+  } else {
+    console.log("not ok");
+    p.style.backgroundColor = "#28b78d";
+    p.classList.add("checked");
+    picksGet.push(pick);
+    console.log(picksGet);
+  }
+
+  if (picksSend.length > 0 && picksGet.length > 0) {
+    document.getElementById("pickOfferButton").style.display = "block";
+  } else {
+    document.getElementById("pickOfferButton").style.display = "none";
+  }
+}
+
+function pickOffer() {
+  var result = evaluatePickTrade();
+
+  if (result) {
+
+    console.log(currPickTrade);
+    for (var i = 0; i < picksSend.length; i++) {
+      draftOrder[picksSend[i][0]][picksSend[i][1]] = currTeam;
+      tradedAway.push("2021 Round " + (picksSend[i][0] + 1) + " (#" + (picksSend[i][1] + 1) + ")");
+      // if (leftOff[0] === picksSend[i][0] && (leftOff[1] - 1) === picksSend[i][1]) {
+      //   currPickTrade = true;
+      // }
+    }
+    for (var i = 0; i < picksGet.length; i++) {
+      draftOrder[picksGet[i][0]][picksGet[i][1]] = nyj;
+      tradedFor.push("2021 Round " + (picksGet[i][0] + 1) + " (#" + (picksGet[i][1] + 1) + ")");
+    }
+    finishPickTrade("yes");
+  } else {
+    finishPickTrade("no");
+  }
+    // console.log(currPickTrade);
+  console.log(draftOrder);
+  picksSend = [];
+  picksGet = [];
+}
+
+function finishPickTrade(hmm) {
+
+  var root = document.getElementById("pickTradeTeamsCont");
+  while (root.firstChild) {
+    root.removeChild(root.firstChild);
+  }
+  document.getElementById("pickOfferButton").style.display = "none";
+  var row = document.createElement("div");
+  row.classList.add("row", "text-center");
+  var col = document.createElement("div");
+  col.classList.add("col-12");
+  var p = document.createElement("p");
+  p.classList.add("pickResult");
+  if (hmm === "yes") {
+    p.innerHTML = "ACCEPTED";
+  } else {
+    p.innerHTML = "REJECTED";
+  }
+  col.appendChild(p);
+  row.appendChild(col);
+  root.appendChild(row);
+}
+
+function evaluatePickTrade() {
+  var sendValue = 0;
+  var getValue = 0;
+  console.log("send");
+  for (let i = 0; i < picksSend.length; i++) {
+    var value = draftValue[picksSend[i][0]][picksSend[i][1]];
+    console.log(value);
+    sendValue += value;
+  }
+  console.log("get");
+  for (let j = 0; j < picksGet.length; j++) {
+    var value = draftValue[picksGet[j][0]][picksGet[j][1]];
+    console.log(value);
+    getValue += value;
+  }
+  if (sendValue >= getValue) {
+    return true;
+  } else {
+    return false;
+  }
 }

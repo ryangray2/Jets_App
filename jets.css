@@ -512,6 +512,50 @@ transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     opacity: 1;
 }
 
+#tradeButton {
+  margin-bottom: 0;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #28b78d;
+  margin-top: 3px;
+  font-family: "Coda Caption";
+    cursor: pointer;
+}
+#pickOfferButton {
+  display: none;
+  margin-bottom: 0;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #28b78d;
+  margin-top: 3px;
+  font-family: "Coda Caption";
+  cursor: pointer;
+}
+
+.pickResult {
+  font-size: 4vh;
+  font-family: "Coda Caption";
+  padding: 10px;
+}
+
+#pickTradeTeamsCont {
+  display: none;
+}
+
+.pickTeam {
+  background-color: #3c3935;
+  border-bottom: 1px solid rgb(40, 37, 32);
+  cursor: pointer;
+}
+
+.teamPick {
+  margin-bottom: 0px;
+  padding: 5px;
+  background-color: #3c3935;
+  border-bottom: 1px solid rgb(40, 37, 32);
+    cursor: pointer;
+}
+
 ///////////////////////////////
 
 .arrow {

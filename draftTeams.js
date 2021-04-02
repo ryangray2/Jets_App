@@ -286,13 +286,25 @@ var ten = {
   picks: []
 };
 
+var teams = [az, atl, car, chi, dal, det, gb, lar, min, no, nyg, phi, sf, sea, tb, was, bal, buf, cin, cle, den, hou, ind, jax, kc, lv, lac, mia, ne, pit, ten]
+
 
 var draftOrder = [
-  [jax, nyj, mia, atl, cin, phi, det, car, den, dal, nyg, sf, lac, min, ne, az, lv, mia, was, chi, ind, ten, nyj, pit, jax, cle, bal, no, gb, buf, kc, tb],
+  [jax, nyj, sf, atl, cin, mia, det, car, den, dal, nyg, phi, lac, min, ne, az, lv, mia, was, chi, ind, ten, nyj, pit, jax, cle, bal, no, gb, buf, kc, tb],
   [jax, nyj, atl, mia, phi, cin, car, den, det, nyg, sf, dal, jax, ne, lac, lv, az, mia, was, chi, ten, ind, pit, sea, lar, bal, cle, no,  buf, gb, kc, tb],
-  [jax, nyj, hou, atl, cin, phi, den, det, car, was, dal, nyg, lac, min, az, lv, mia, was, chi, phi, ten, nyj, pit, det, cle, min, cle, gb, buf, kc, tb, ne, lac, no, dal, ten, lar, sf, lar, bal, no],
-  [jax, nyj, atl, hou, cle, cin, det, car, den, dal, nyg, sf, lac, min, ne, lv, hou, mia, was, min, ten, ind, pit, sea, jax, bal, cle, no, min, gb, kc, tb, dal, ne, pit, lar, gb, min, kc],
-  [jax, nyj, hou, atl, cin, phi, car, den, det, nyj, sf, phi, min, ne, lac, az, buf, lv, was, chi, ind, ten, sea, bal, cle, jax, min, sf, gb, buf, kc, tb, gb, dal, atl, sf, kc, atl, bal],
-  [ten, ne, atl, hou, phi, cin, den, dal, car, sf, ne, nyg, nyj, lac, min, nyg, hou, lv, chi, lac, ind, mia, sea, lar, bal, cle, hou, buf, gb, ten, pit, tb, no, atl, gb, chi, car, min, phi, phi, car, dal, chi],
+  [jax, nyj, hou, atl, cin, phi, den, det, car, was, dal, nyg, lac, min, az, lv, mia, was, chi, phi, ten, nyj, pit, det, cle, min, cle, gb, buf, kc, tb, ne, lac, no, dal, ten, det, sf, lar, bal, no],
+  [jax, nyj, atl, hou, cle, cin, det, car, den, dal, nyg, sf, lac, min, ne, lv, hou, phi, was, min, ten, ind, pit, sea, jax, bal, cle, no, min, gb, kc, tb, dal, ne, pit, lar, gb, min, kc],
+  [jax, nyj, hou, atl, cin, phi, car, den, det, nyj, sf, mia, min, ne, lac, az, buf, lv, was, chi, ind, ten, sea, bal, cle, jax, min, sf, gb, buf, kc, tb, ne, gb, dal, sf, kc, atl, atl, bal],
+  [lac, nyj, atl, ne, phi, cin, den, dal, car, sf, ne, nyg, lac, min, nyg, hou, lv, chi, lac, ind, mia, sea, lar, bal, cle, hou, buf, gb, ten, pit, tb, no, atl, gb, chi, car, min, phi, phi, car, dal, chi],
   [jax, sf, hou, chi, cin, phi, cin, buf, den, dal, den, sf, lac, min, ne, az, was, pit, was, lv, ind, jax, sea, tb, lar, den, pit, ten, gb, cle]
+];
+
+var draftValue = [
+  [3000, 2600, 2200, 1800, 1700, 1600, 1500, 1400, 1350, 1300, 1250, 1200, 1150, 1100, 1050, 1000, 950, 900, 875, 850, 800, 780, 760, 740, 720, 700, 680, 660, 640, 620, 600, 590],
+  [580, 560, 550, 540, 530, 520, 510, 500, 490, 480, 470, 460, 450, 440, 430, 420, 410, 400, 390, 380, 370, 360, 350, 340, 330, 320, 310, 300, 292, 284, 276, 270],
+  [265, 260, 255, 250, 245, 240, 235, 230, 225, 220, 215, 210, 205, 200, 195, 190, 185, 180, 175, 170, 165, 160, 155, 150, 145, 140, 136, 132, 128, 124, 120],
+  [116, 112, 108, 104, 100, 96, 92, 88, 86, 84, 82, 80, 78, 76, 74, 72, 70, 68, 66, 64, 62, 60, 58, 56, 54, 52, 50, 49, 48, 47, 46, 45],
+  [44, 43, 42, 41, 40, 40, 39, 39, 38, 38, 37, 37, 36, 36, 35, 35, 34, 34, 33, 33, 32, 32, 31, 31, 31, 30, 30, 29, 29, 29, 29, 28, 28, 27],
+  [27, 27, 26, 26, 25, 25, 25, 24, 24, 23, 23, 23, 22, 22, 21, 21, 21, 20, 19, 19, 19, 18, 18, 17, 17, 17, 16, 16, 15, 15, 15],
+  [14, 14, 13, 13, 13, 12, 12, 11, 11, 11, 10, 10, 9, 9, 9, 8, 8, 7, 7, 7, 6, 6, 5, 5, 5, 4, 4, 3, 3, 3, 2, 2]
 ];
