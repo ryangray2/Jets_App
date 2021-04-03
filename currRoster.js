@@ -989,7 +989,7 @@ interest: 70
 };
 var DelshaunPhillips = {
   name: 'Del\'Shaun Phillips',
-  pos: 'IDL',
+  pos: 'LB',
   age: '24',
   salary: 780000,
   capPenalty: 0
