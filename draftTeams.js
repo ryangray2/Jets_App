@@ -295,7 +295,7 @@ var draftOrder = [
   [jax, nyj, hou, atl, cin, phi, den, det, car, was, dal, nyg, lac, min, az, lv, mia, was, chi, phi, ten, nyj, pit, det, cle, min, cle, gb, buf, kc, tb, ne, lac, no, dal, ten, det, sf, lar, bal, no],
   [jax, nyj, atl, hou, cle, cin, det, car, den, dal, nyg, sf, lac, min, ne, lv, hou, phi, was, min, ten, ind, pit, sea, jax, bal, cle, no, min, gb, kc, tb, dal, ne, pit, lar, gb, min, kc],
   [jax, nyj, hou, atl, cin, phi, car, den, det, nyj, sf, mia, min, ne, lac, az, buf, lv, was, chi, ind, ten, sea, bal, cle, jax, min, sf, gb, buf, kc, tb, ne, gb, dal, sf, kc, atl, atl, bal],
-  [lac, nyj, atl, ne, phi, cin, den, dal, car, sf, ne, nyg, lac, min, nyg, hou, lv, chi, lac, ind, mia, sea, lar, bal, cle, hou, buf, gb, ten, pit, tb, no, atl, gb, chi, car, min, phi, phi, car, dal, chi],
+  [lac, nyj, atl, ne, phi, cin, den, dal, nyj, sf, ne, nyg, lac, min, nyg, hou, lv, chi, lac, ind, mia, sea, lar, bal, cle, hou, buf, gb, ten, pit, tb, no, atl, gb, chi, car, min, phi, phi, car, dal, chi],
   [jax, sf, hou, chi, cin, phi, cin, buf, den, dal, den, sf, lac, min, ne, az, was, pit, was, lv, ind, jax, sea, tb, lar, den, pit, ten, gb, cle]
 ];
 

@@ -996,13 +996,13 @@ var DelshaunPhillips = {
 };
 
 
-var currRosterArr = [JoshAdams, BlessuanAustin, ManassehBailey, CoreyBallentine, MekhiBecton, BraxtonBerrios, DanielBrown, KyronBrown, LawrenceCager, ElijahCampbell, BlakeCashman, CameronClark, KeelanCole, TrevonColey, JamisonCrowder, JohnDaka, SamDarnold, NoahDawkins, AshytnDavis, ConnorDavis, CoreyDavis, JarradDavis, JoshDoctson, ChumaEdoga, GeorgeFant, FolorunsoFatukasi, DanFeeney, SamFicken, ShariffFinch, JohnFranklinMyers, FrankGore, RyanGriffin, PeteGuerriero, JavelinGuidry, BryceHager, BryceHall, SaquanHampton, JustinHardee, JTHassell, ThomasHennessy, ChrisHerndon, NevilleHewitt, BryceHuff, LamarJackson, TyJohnson, LamarcusJoyner, LeoKoloamatangi, TylerKroft, CarlLawson, AlexLewis, ZaneLewis, JoshMalone, BradenMann, ArthurMaulet, MarcusMaye, ConorMcDermott, BradleyMcDougald, ConnorMcGovern, ChaseMcLaughlin, DenzelMims, DJMontgomery, JamesMorgan, CJMosley, JimmyMurray, LaMicalPerine, KylePhillips, BrianPoole, SheldonRankins, JaleelScott, NathanShepherd, TanzelSmart, JeffSmith, VyncintSmith, RossTravis, TrevonWesco, MikeWhite, QuinnenWilliams, GregVanRoten, JabariZuniga, HarveyLangi, KyronBrown, BennettJackson, TevinColeman, VinnyCurry, DelshaunPhillips];
+var currRosterArr = [JoshAdams, BlessuanAustin, ManassehBailey, CoreyBallentine, MekhiBecton, BraxtonBerrios, DanielBrown, KyronBrown, LawrenceCager, ElijahCampbell, BlakeCashman, CameronClark, KeelanCole, TrevonColey, JamisonCrowder, JohnDaka, NoahDawkins, AshytnDavis, ConnorDavis, CoreyDavis, JarradDavis, JoshDoctson, ChumaEdoga, GeorgeFant, FolorunsoFatukasi, DanFeeney, SamFicken, ShariffFinch, JohnFranklinMyers, FrankGore, RyanGriffin, PeteGuerriero, JavelinGuidry, BryceHager, BryceHall, SaquanHampton, JustinHardee, JTHassell, ThomasHennessy, ChrisHerndon, NevilleHewitt, BryceHuff, LamarJackson, TyJohnson, LamarcusJoyner, LeoKoloamatangi, TylerKroft, CarlLawson, AlexLewis, ZaneLewis, JoshMalone, BradenMann, ArthurMaulet, MarcusMaye, ConorMcDermott, BradleyMcDougald, ConnorMcGovern, ChaseMcLaughlin, DenzelMims, DJMontgomery, JamesMorgan, CJMosley, JimmyMurray, LaMicalPerine, KylePhillips, BrianPoole, SheldonRankins, JaleelScott, NathanShepherd, TanzelSmart, JeffSmith, VyncintSmith, RossTravis, TrevonWesco, MikeWhite, QuinnenWilliams, GregVanRoten, JabariZuniga, HarveyLangi, KyronBrown, BennettJackson, TevinColeman, VinnyCurry, DelshaunPhillips];
 
 
 var deadCap = 15677075;
 var rollover = 26686546;
 // var salaryCap = 211686546;
-var salaryCap = 211686546 + 8032258 + 537196;
+var salaryCap = 211686546 + 537196 + 2163072;
 
 // 150
 var pick2021_1 = {

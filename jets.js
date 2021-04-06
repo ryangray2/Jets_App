@@ -341,7 +341,7 @@ function skipTrade() {
       document.getElementById("watsonTrade").style.display = "none";
           document.getElementById("wilsonTrade").style.display = "none";
             document.getElementById("twoTrade").style.display = "none";
-                  document.getElementById("darnoldTrade").style.display = "none";
+                  // document.getElementById("darnoldTrade").style.display = "none";
 
   generateRoster();
   generateTeamFA();
