@@ -26,6 +26,7 @@ var currKind = "all";
 function load() {
     var tempArr = [leftOff[0], leftOff[1]];
     loadPicks(tempArr);
+    rerank();
     for (let i = 0; i < draftPlayers.length; i++) {
       draftPlayers[i].rank = i + 1;
     }
@@ -72,6 +73,15 @@ function load() {
     }
   }
   // console.log(posList);
+}
+
+function rerank() {
+  for (let i = 0; i < draftPlayers.length; i++) {
+    draftPlayers[i].rank = i + 1;
+    if (draftPlayers[i].pos === "QB") {
+      console.log(draftPlayers[i].name + ": " + draftPlayers[i].rank)
+    }
+  }
 }
 
 function loadPicks(start) {
@@ -1878,11 +1888,14 @@ function getPick(team) {
       // console.log(index2);
       // var pick = draftPlayers[index2];
     }
-    else if (draftSummary.length < 2) {
+    else if (draftSummary.length < 3 && draftPlayers.includes(ZachWilson)) {
       var pick = ZachWilson;
     }
     else {
-      if (draftSummary.length < 15 && team.needs.includes("QB")) {
+      if (draftSummary.length < 3) {
+        possiblePicks = [qb];
+      }
+      else if (draftSummary.length < 15 && team.needs.includes("QB")) {
         possiblePicks.push(qb);
         possiblePicks.push(qb);
         possiblePicks.push(qb);
